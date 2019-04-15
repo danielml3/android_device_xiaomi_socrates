@@ -23,3 +23,6 @@ PRODUCT_EXTRA_VNDK_VERSIONS := $(PRODUCT_SHIPPING_API_LEVEL)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Updatable APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
