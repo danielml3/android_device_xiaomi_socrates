@@ -93,6 +93,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # SEPolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
+# System properties
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
