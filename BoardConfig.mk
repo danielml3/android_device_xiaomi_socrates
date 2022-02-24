@@ -118,6 +118,10 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+# Vibrator
+TARGET_QTI_VIBRATOR_EFFECT_LIB := libqtivibratoreffect.xiaomi
+TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM := true
+
 # VINTF
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/framework_matrix.xml
