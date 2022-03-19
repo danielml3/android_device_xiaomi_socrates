@@ -4,9 +4,11 @@ system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 
 # IMS
+system_ext/app/ImsRcsService/ImsRcsService.apk
 system_ext/app/QtiTelephony/QtiTelephony.apk
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
+system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
 system_ext/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
