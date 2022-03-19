@@ -4,6 +4,13 @@ system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 
 # IMS
+product/app/uimgbaservice/uimgbaservice.apk
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimGbaManager.xml
+product/etc/permissions/UimService.xml
+product/framework/uimgbalibrary.jar
+product/framework/uimgbamanagerlibrary.jar
+product/framework/uimservicelibrary.jar
 system_ext/app/ImsRcsService/ImsRcsService.apk
 system_ext/app/QtiTelephony/QtiTelephony.apk
 system_ext/etc/permissions/qcrilhook.xml
