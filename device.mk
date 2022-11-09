@@ -225,8 +225,9 @@ PRODUCT_PACKAGES += \
 # ProtoBuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full.vendor \
-    libprotobuf-cpp-lite.vendor
-
+    libprotobuf-cpp-lite.vendor \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
 # PSI
 PRODUCT_PACKAGES += \
     libpsi
