@@ -11,7 +11,8 @@ AB_OTA_PARTITIONS := \
     system \
     system_dlkm \
     system_ext \
-    vbmeta
+    vbmeta \
+    vbmeta_system
 
 # Architecture
 TARGET_ARCH := arm64
@@ -86,3 +87,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+BOARD_AVB_VBMETA_SYSTEM := product system system_ext
+BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 1
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
