@@ -1,0 +1,4 @@
+# Telephony
+system/etc/sysconfig/qti_whitelist.xml
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
