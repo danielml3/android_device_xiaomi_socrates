@@ -81,6 +81,9 @@ TARGET_KERNEL_CONFIG := \
     vendor/socrates_GKI.config
 KERNEL_LTO := none
 
+BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
+TARGET_NEEDS_DTBOIMAGE := true
+
 # Kernel (modules)
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/xiaomi/sm8550-modules
 TARGET_KERNEL_EXT_MODULES := \
