@@ -231,6 +231,7 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0.vendor \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.security.keymint-V1-ndk.vendor \
+    android.hardware.security.rkp-V3-ndk.vendor \
     android.system.keystore2-V1-ndk.vendor \
     android.hardware.hardware_keystore.xml \
     libkeymaster_messages.vendor
