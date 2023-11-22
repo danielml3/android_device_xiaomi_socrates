@@ -74,6 +74,8 @@ $(foreach p, $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST))
     $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
+include vendor/lineage/config/BoardConfigReservedSize.mk
+
 # Prebuilts
 include device/xiaomi/socrates-prebuilt/BoardConfigPrebuilt.mk
 
