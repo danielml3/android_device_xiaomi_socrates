@@ -100,15 +100,16 @@ static int ufs_bsg_ioctl(int fd, struct ufs_bsg_request *req,
         enum bsg_ioctl_dir dir)
 {
     int ret;
-    struct sg_io_v4 sg_io = {0};
+    struct sg_io_v4 sg_io = {
+        .guard = 'Q',
+        .protocol = BSG_PROTOCOL_SCSI,
+        .subprotocol = BSG_SUB_PROTOCOL_SCSI_TRANSPORT,
+        .request_len = sizeof(*req),
+        .request = (__u64)req,
+        .response = (__u64)rsp,
+        .max_response_len = sizeof(*rsp),
+    };
 
-    sg_io.guard = 'Q';
-    sg_io.protocol = BSG_PROTOCOL_SCSI;
-    sg_io.subprotocol = BSG_SUB_PROTOCOL_SCSI_TRANSPORT;
-    sg_io.request_len = sizeof(*req);
-    sg_io.request = (__u64)req;
-    sg_io.response = (__u64)rsp;
-    sg_io.max_response_len = sizeof(*rsp);
     if (dir == BSG_IOCTL_DIR_FROM_DEV) {
         sg_io.din_xfer_len = buf_len;
         sg_io.din_xferp = (__u64)(buf);
@@ -155,15 +156,15 @@ static int ufs_query_attr(int fd, __u32 value,
         __u8 func, __u8 opcode, __u8 idn,
         __u8 index, __u8 sel)
 {
-    struct ufs_bsg_request req = {0};
-    struct ufs_bsg_reply rsp = {0};
+    struct ufs_bsg_request req = {
+        .upiu_req.qr.value = htobe32(value),
+    };
+    struct ufs_bsg_reply rsp = {};
     enum bsg_ioctl_dir dir = BSG_IOCTL_DIR_FROM_DEV;
     int ret = 0;
 
     if (opcode == QUERY_REQ_OP_WRITE_DESC || opcode == QUERY_REQ_OP_WRITE_ATTR)
         dir = BSG_IOCTL_DIR_TO_DEV;
-
-    req.upiu_req.qr.value = htobe32(value);
 
     compose_ufs_bsg_query_req(&req, func, opcode, idn, index, sel, 0);
 
