@@ -23,13 +23,12 @@ ufsbsg_cc_defaults {
 }
 
 cc_library {
-    name: "librecovery_updater",
+    name: "libgpt-utils",
     vendor: true,
     recovery_available: true,
-    defaults: ["libion_header_paths" ,"ufsbsg_defaults"],
+    defaults: ["ufsbsg_defaults"],
     srcs: [
         "gpt-utils.cpp",
-        "oem-updater.cpp",
         "recovery-ufs-bsg.cpp",
     ],
     static_libs: [
@@ -52,8 +51,4 @@ cc_library {
     },
     owner: "qti",
     export_include_dirs: ["."],
-    header_libs: [
-            "qti_kernel_headers",
-            "device_kernel_headers",
-    ],
 }
