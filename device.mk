@@ -23,6 +23,10 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     checkpoint_gc
 
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2-impl-qti.recovery
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
