@@ -30,6 +30,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.socrates.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.socrates.rc \
     $(LOCAL_PATH)/init/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
 
+# Overlay
+PRODUCT_PACKAGES += \
+    FrameworkResOverlaySocrates \
+    SystemUIOverlaySocrates
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
