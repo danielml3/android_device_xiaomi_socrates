@@ -1,0 +1,4 @@
+service system.fps_hal_socrates /system/bin/hw/android.hardware.biometrics.fingerprint@2.3-service.socrates
+    class late_start
+    user system
+    group system input uhid
