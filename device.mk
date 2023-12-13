@@ -48,3 +48,7 @@ PRODUCT_PACKAGES += \
 
 # Vendor configurations
 $(call inherit-product, vendor/xiaomi/socrates/socrates-vendor.mk)
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    vibratorfeature-wrapper
