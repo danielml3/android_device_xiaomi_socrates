@@ -90,6 +90,7 @@ SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # System properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
