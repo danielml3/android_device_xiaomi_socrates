@@ -20,3 +20,7 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 bluetooth.profile.tbs.server.enabled=true
 bluetooth.profile.vc.server.enabled=true
+
+# Graphics
+debug.sf.use_phase_offsets_as_durations=0
+debug.sf.enable_gl_backpressure=0
