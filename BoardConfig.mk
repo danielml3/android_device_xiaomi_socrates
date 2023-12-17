@@ -36,6 +36,9 @@ TARGET_NO_BOOTLOADER := true
 # Display
 TARGET_SCREEN_DENSITY := 540
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_socrates
+
 # Kernel
 TARGET_NO_KERNEL_OVERRIDE := true
 
