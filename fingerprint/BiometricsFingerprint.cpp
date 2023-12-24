@@ -23,6 +23,13 @@
 #include <inttypes.h>
 #include <unistd.h>
 
+#include <android-base/file.h>
+
+#define CMD_GXZW_ANIM 1
+#define CMD_FOD_LHBM_STATUS 4
+
+#define FOD_GESTURE_NODE "/sys/devices/platform/goodix_ts.0/fod_gesture"
+
 namespace android {
 namespace hardware {
 namespace biometrics {
@@ -37,6 +44,7 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
 BiometricsFingerprint::BiometricsFingerprint() {
     sInstance = this;
+    mClientCallback = nullptr;
 
     m2_1Service = IBiometricsFingerprint2_1::getService();
     if (m2_1Service == nullptr) {
@@ -45,15 +53,27 @@ BiometricsFingerprint::BiometricsFingerprint() {
     } else {
         ALOGI("Successfully bound 2.1 fingerprint service");
     }
+
+    mExtension = IXiaomiFingerprint::getService();
+    if (mExtension == nullptr) {
+        ALOGE("Fingerprint extension not available");
+        return;
+    } else {
+        ALOGI("Successfully bound fingerprint extension");
+    }
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
     m2_1Service = nullptr;
+    mExtension = nullptr;
+    mClientCallback = nullptr;
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
         const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
-    return m2_1Service->setNotify(clientCallback);
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    mClientCallback = clientCallback;
+    return m2_1Service->setNotify(clientCallback == nullptr ? nullptr : this);
 }
 
 Return<uint64_t> BiometricsFingerprint::preEnroll()  {
@@ -62,10 +82,12 @@ Return<uint64_t> BiometricsFingerprint::preEnroll()  {
 
 Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69>& hat,
         uint32_t gid, uint32_t timeoutSec) {
+    setFODEnabed(true);
     return m2_1Service->enroll(hat, gid, timeoutSec);
 }
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll() {
+    setFODEnabed(false);
     return m2_1Service->postEnroll();
 }
 
@@ -74,6 +96,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    setFODEnabed(false);
     return m2_1Service->cancel();
 }
 
@@ -92,6 +115,7 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
         uint32_t gid) {
+    setFODEnabed(true);
     return m2_1Service->authenticate(operationId, gid);
 }
 
@@ -100,11 +124,68 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t /*sensorId*/) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    setFODPressed(true);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
+    setFODPressed(false);
     return Void();
+}
+
+// Start of IBiometricsFingerprintClientCallback
+
+Return<void> BiometricsFingerprint::onEnrollResult(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+
+    onFingerUp();
+    setFODEnabed(remaining != 0);
+
+    return mClientCallback->onEnrollResult(deviceId, fingerId, groupId, remaining);
+}
+
+Return<void> BiometricsFingerprint::onAcquired(uint64_t deviceId, FingerprintAcquiredInfo acquiredInfo, int32_t vendorCode) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onAcquired(deviceId, acquiredInfo, vendorCode);
+}
+
+Return<void> BiometricsFingerprint::onAuthenticated(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, const hidl_vec<uint8_t>& token) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+
+    onFingerUp();
+    setFODEnabed(fingerId == 0);
+
+    return mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
+}
+
+Return<void> BiometricsFingerprint::onError(uint64_t deviceId, FingerprintError error, int32_t vendorCode) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onError(deviceId, error, vendorCode);
+}
+
+Return<void> BiometricsFingerprint::onRemoved(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onRemoved(deviceId, fingerId, groupId, remaining);
+}
+
+Return<void> BiometricsFingerprint::onEnumerate(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onEnumerate(deviceId, fingerId, groupId, remaining);
+}
+
+// End of IBiometricsFingerprintClientCallback
+
+void BiometricsFingerprint::setFODEnabed(bool enabled) {
+    mExtension->extCmd(CMD_FOD_LHBM_STATUS, enabled);
+    android::base::WriteStringToFile(enabled ? "1" : "0", FOD_GESTURE_NODE);
+
+    if (!enabled) {
+        setFODPressed(false);
+    }
+}
+
+void BiometricsFingerprint::setFODPressed(bool pressed) {
+       mExtension->extCmd(CMD_GXZW_ANIM, pressed);
 }
 
 IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
