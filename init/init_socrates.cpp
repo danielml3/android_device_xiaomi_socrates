@@ -51,4 +51,7 @@ void vendor_load_properties() {
     property_override("ro.build.tags", "release-keys");
     property_override("ro.debuggable", "0");
     property_override("ro.secure", "1");
+
+    property_override("ro.config.vc_call_vol_steps", "7");
+    property_override("ro.config.media_vol_steps", "15");
 }
