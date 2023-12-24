@@ -23,6 +23,9 @@
 #include <inttypes.h>
 #include <unistd.h>
 
+#define CMD_FOD_LHBM_STATUS 4
+#define CMD_TOUCH_FOD_ENABLE 1001
+
 namespace android {
 namespace hardware {
 namespace biometrics {
@@ -45,10 +48,28 @@ BiometricsFingerprint::BiometricsFingerprint() {
     } else {
         ALOGI("Successfully bound 2.1 fingerprint service");
     }
+
+    mExtension = IXiaomiFingerprint::getService();
+    if (mExtension == nullptr) {
+        ALOGE("Fingerprint extension not available");
+        return;
+    } else {
+        ALOGI("Successfully bound fingerprint extension");
+    }
+
+    mTouchFeature = ITouchFeature::getService();
+    if (mTouchFeature == nullptr) {
+        ALOGE("TouchFeature not available");
+        return;
+    } else {
+        ALOGI("Successfully bound TouchFeature");
+    }
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
     m2_1Service = nullptr;
+    mExtension = nullptr;
+    mTouchFeature = nullptr;
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
@@ -100,11 +121,18 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t /*sensorId*/) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    setFodPressed(true);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
+    setFodPressed(false);
     return Void();
+}
+
+void BiometricsFingerprint::setFodPressed(bool pressed) {
+    mExtension->extCmd(CMD_FOD_LHBM_STATUS, pressed);
+    mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, pressed);
 }
 
 IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
