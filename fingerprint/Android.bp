@@ -3,6 +3,7 @@ cc_binary {
     defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.socrates.rc"],
     vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.socrates.xml"],
+    device_specific: true,
     relative_install_path: "hw",
     srcs: [
         "BiometricsFingerprint.cpp",
