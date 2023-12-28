@@ -55,6 +55,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        *.xml)
+            sed -i s/xml=version/xml\ version/g "${2}"
+            ;;
     esac
 }
 
@@ -63,5 +66,6 @@ function blob_fixup() {
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+extract "${MY_DIR}/proprietary-files-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
 "${MY_DIR}/setup-makefiles.sh"
