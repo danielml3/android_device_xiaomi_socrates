@@ -25,8 +25,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.socrates
 
-# Fstab (ramdisk)
+# Fstab
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
     $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
 # Init
@@ -66,3 +67,8 @@ PRODUCT_PACKAGES += \
 
 # Vendor configurations
 $(call inherit-product, vendor/xiaomi/socrates/socrates-vendor.mk)
+
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservice \
+    vndservicemanager
