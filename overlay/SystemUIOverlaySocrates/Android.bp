@@ -1,4 +1,5 @@
 runtime_resource_overlay {
     name: "SystemUIOverlaySocrates",
     sdk_version: "current",
+    vendor: true,
 }
