@@ -24,6 +24,8 @@
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <android/hardware/biometrics/fingerprint/2.3/IBiometricsFingerprint.h>
+#include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprintClientCallback.h>
+#include <android/hardware/biometrics/fingerprint/2.1/types.h>
 
 #include <vendor/xiaomi/hw/touchfeature/1.0/ITouchFeature.h>
 #include <vendor/xiaomi/hardware/fingerprintextension/1.0/IXiaomiFingerprint.h>
@@ -37,6 +39,8 @@ namespace implementation {
 
 using ::android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
 using ::android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprintClientCallback;
+using ::android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo;
+using ::android::hardware::biometrics::fingerprint::V2_1::FingerprintError;
 using ::android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
@@ -49,7 +53,7 @@ using IBiometricsFingerprint2_1 = ::android::hardware::biometrics::fingerprint::
 using ::vendor::xiaomi::hw::touchfeature::V1_0::ITouchFeature;
 using ::vendor::xiaomi::hardware::fingerprintextension::V1_0::IXiaomiFingerprint;
 
-struct BiometricsFingerprint : public IBiometricsFingerprint {
+struct BiometricsFingerprint : public IBiometricsFingerprint, public IBiometricsFingerprintClientCallback {
 public:
     BiometricsFingerprint();
     ~BiometricsFingerprint();
@@ -73,11 +77,21 @@ public:
     Return<void> onFingerDown(uint32_t x, uint32_t y, float minor, float major) override;
     Return<void> onFingerUp() override;
 
+    // Start of IBiometricsFingerprintClientCallback
+    Return<void> onEnrollResult(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) override;
+    Return<void> onAcquired(uint64_t deviceId, FingerprintAcquiredInfo acquiredInfo, int32_t vendorCode) override;
+    Return<void> onAuthenticated(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, const hidl_vec<uint8_t>& token) override;
+    Return<void> onError(uint64_t deviceId, FingerprintError error, int32_t vendorCode) override;
+    Return<void> onRemoved(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) override;
+    Return<void> onEnumerate(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) override;
+    // End of IBiometricsFingerprintClientCallback
 private:
     static BiometricsFingerprint* sInstance;
     android::sp<IBiometricsFingerprint2_1> m2_1Service;
     android::sp<IXiaomiFingerprint> mExtension;
     android::sp<ITouchFeature> mTouchFeature;
+    android::sp<IBiometricsFingerprintClientCallback> mClientCallback;
+    std::mutex mClientCallbackMutex;
 
     void setFodPressed(bool pressed);
 };
