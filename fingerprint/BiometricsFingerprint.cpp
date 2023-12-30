@@ -40,6 +40,7 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
 BiometricsFingerprint::BiometricsFingerprint() {
     sInstance = this;
+    mClientCallback = nullptr;
 
     m2_1Service = IBiometricsFingerprint2_1::getService();
     if (m2_1Service == nullptr) {
@@ -70,11 +71,14 @@ BiometricsFingerprint::~BiometricsFingerprint() {
     m2_1Service = nullptr;
     mExtension = nullptr;
     mTouchFeature = nullptr;
+    mClientCallback = nullptr;
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
         const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
-    return m2_1Service->setNotify(clientCallback);
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    mClientCallback = clientCallback;
+    return m2_1Service->setNotify(clientCallback == nullptr ? nullptr : this);
 }
 
 Return<uint64_t> BiometricsFingerprint::preEnroll()  {
@@ -129,6 +133,43 @@ Return<void> BiometricsFingerprint::onFingerUp() {
     setFodPressed(false);
     return Void();
 }
+
+// Start of IBiometricsFingerprintClientCallback
+
+Return<void> BiometricsFingerprint::onEnrollResult(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onEnrollResult(deviceId, fingerId, groupId, remaining);
+}
+
+Return<void> BiometricsFingerprint::onAcquired(uint64_t deviceId, FingerprintAcquiredInfo acquiredInfo, int32_t vendorCode) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+
+    if (acquiredInfo != FingerprintAcquiredInfo::ACQUIRED_VENDOR) {
+        mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, 0);
+    }
+
+    return mClientCallback->onAcquired(deviceId, acquiredInfo, vendorCode);
+}
+
+Return<void> BiometricsFingerprint::onAuthenticated(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, const hidl_vec<uint8_t>& token) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
+}
+
+Return<void> BiometricsFingerprint::onError(uint64_t deviceId, FingerprintError error, int32_t vendorCode) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onError(deviceId, error, vendorCode);
+}
+Return<void> BiometricsFingerprint::onRemoved(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onRemoved(deviceId, fingerId, groupId, remaining);
+}
+Return<void> BiometricsFingerprint::onEnumerate(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    return mClientCallback->onEnumerate(deviceId, fingerId, groupId, remaining);
+}
+
+// End of IBiometricsFingerprintClientCallback
 
 void BiometricsFingerprint::setFodPressed(bool pressed) {
     mExtension->extCmd(CMD_FOD_LHBM_STATUS, pressed);
