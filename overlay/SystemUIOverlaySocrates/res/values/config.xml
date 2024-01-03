@@ -25,4 +25,7 @@
 
     <!-- Color of the UDFPS pressed view -->
     <color name="config_udfpsColor">#00FFFFFF</color>
+
+    <!-- The Enrollment Progress bar for UDFPS sensor in pixels -->
+    <integer name="config_udfpsEnrollProgressBar">150</integer>
 </resources>
