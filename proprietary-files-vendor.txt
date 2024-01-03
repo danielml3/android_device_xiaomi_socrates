@@ -1080,7 +1080,6 @@ odm/mount/camera/lib/rfsa/adsp/libmialgo_mc_bokeh_cdsp_skel.so
 odm/mount/camera/lib/rfsa/adsp/libmialgo_rawhdr_cdsp_skel.so
 odm/mount/camera/lib/rfsa/adsp/libmialgo_rfs_cdsp_skel.so
 odm/mount/camera/lib/rfsa/adsp/libmialgo_slow_motion_cdsp_skel.so
--odm/overlay/FrameworksResTarget_Vendor.apk
 -vendor/app/CACertService/CACertService.apk
 -vendor/app/CneApp/CneApp.apk
 -vendor/app/EidService/EidService.apk
@@ -3742,7 +3741,4 @@ vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
 vendor/lib64/vendor.xiaomi.sensor.communicate@1.0.so
 vendor/lib64/vndk/libnl.so
--vendor/overlay/SecureElementResTarget_Vendor.apk
--vendor/overlay/WifiResTarget.apk
--vendor/overlay/WifiResTarget_spf.apk
 vendor/rfs/rfs_symlinks

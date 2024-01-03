@@ -1082,6 +1082,12 @@ VENDOR_SKIP_FILES=(
     "vendor/lib/android.hardware.nfc@1.1.so"
     "vendor/lib/android.hardware.nfc@1.2.so"
 
+    # Overlays
+    "odm/overlay/FrameworksResTarget_Vendor.apk"
+    "vendor/overlay/SecureElementResTarget_Vendor.apk"
+    "vendor/overlay/WifiResTarget.apk"
+    "vendor/overlay/WifiResTarget_spf.apk"
+
     # Power
     "vendor/lib64/android.hardware.power@1.0.so"
     "vendor/lib64/android.hardware.power@1.1.so"
@@ -1325,7 +1331,6 @@ VENDOR_MODULE_DEST=(
 
 VENDOR_MODULE_FILES=(
     "*.apk"
-    "*/overlay/*"
 )
 
 VENDOR_SKIP_LINKS=(
