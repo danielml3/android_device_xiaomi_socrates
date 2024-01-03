@@ -225,6 +225,9 @@ VENDOR_SKIP_FILES=(
     "*/android.hardware.nfc*.so"
     "*/nqnfcinfo"
 
+    # Overlays
+    "*/overlay/*"
+
     # Power
     "*/android.hardware.power*.so"
     "*/vendor.qti.hardware.perf*.so"
@@ -337,7 +340,6 @@ VENDOR_MODULE_DEST=(
 
 VENDOR_MODULE_FILES=(
     "*.apk"
-    "*/overlay/*"
 )
 
 VENDOR_SKIP_LINKS=(
