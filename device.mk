@@ -337,7 +337,9 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-V1-ndk_platform.vendor
+    vendor.qti.hardware.vibrator.service
+
+$(call soong_config_set, vibrator, vibratortargets, vibratoraidlV2target)
 
 # WiFi
 PRODUCT_PACKAGES += \

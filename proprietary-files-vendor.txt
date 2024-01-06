@@ -4,7 +4,6 @@ odm/bin/cstool
 odm/bin/fidoca
 odm/bin/headset_detect.sh
 odm/bin/hw/vendor.nxp.hardware.nfc@2.0-service
-odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
 odm/bin/hw/vendor.xiaomi.hw.touchfeature@1.0-service
 odm/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
 odm/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service
@@ -170,7 +169,6 @@ odm/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
 odm/etc/init/vendor.xiaomi.hardware.mtdservice@1.3-service.rc
 odm/etc/init/vendor.xiaomi.hardware.otrpagent@2.0-service.rc
 odm/etc/init/vendor.xiaomi.hardware.tidaservice@1.2-service.rc
-odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
 odm/etc/init/vendor.xiaomi.hardware.vsimapp@1.0-service.rc
 odm/etc/init/vendor.xiaomi.hw.touchfeature@1.0-service.rc
 odm/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc
@@ -195,7 +193,6 @@ odm/etc/permissions/android.hardware.se.omapi.ese.xml
 odm/etc/permissions/android.hardware.se.omapi.uicc.xml
 odm/etc/permissions/com.android.nfc_extras.xml
 odm/etc/permissions/com.nxp.mifare.xml
-odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml
 odm/etc/sensors/config/lsm6dso_0.json
 odm/etc/sensors/config/qmc6308_0.json
 odm/etc/sensors/config/qsh_camera.json
@@ -279,7 +276,6 @@ odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mtdservice.xml
 odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.otrpagent@2.0.xml
 odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.tidaservice.xml
 odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.vsimapp.xml
-odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
 odm/etc/vintf/manifest/vendor.xiaomi.hw.touchfeature@1.0-service.xml
 odm/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml
 odm/etc/vintf/manifest/vendor.xiaomi.sensor.communicate@1.0_manifest.xml
@@ -2586,7 +2582,6 @@ vendor/lib64/vendor.display.color@1.7.so
 vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
-vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
 vendor/lib64/vendor.libdpmctmgr.so
 vendor/lib64/vendor.libdpmfdmgr.so
 vendor/lib64/vendor.libdpmframework.so
