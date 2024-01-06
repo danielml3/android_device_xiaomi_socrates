@@ -1273,9 +1273,14 @@ VENDOR_SKIP_FILES=(
     "vendor/etc/init/vndservicemanager.rc"
 
     # Vibrator
+    "odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service"
+    "odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc"
+    "odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml"
+    "odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml"
     "vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so"
     "vendor/lib64/hw/vibrator.default.so"
     "vendor/lib64/libvibrator.so"
+    "vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so"
     "vendor/lib/hw/vibrator.default.so"
     "vendor/lib/libvibrator.so"
 
