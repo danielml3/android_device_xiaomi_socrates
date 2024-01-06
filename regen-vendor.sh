@@ -318,6 +318,7 @@ VENDOR_SKIP_FILES=(
     "*/vibrator.default.so"
     "*/android.hardware.vibrator-V1-ndk_platform.so"
     "*/libvibrator.so"
+    "*/*vibratorfeature*"
 
     # VINTF manifests and fragments
     "*/etc/vintf/manifest.xml"
