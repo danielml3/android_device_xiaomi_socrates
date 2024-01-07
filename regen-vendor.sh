@@ -319,6 +319,7 @@ VENDOR_SKIP_FILES=(
     "*/android.hardware.vibrator-V1-ndk_platform.so"
     "*/libvibrator.so"
     "*/*vibratorfeature*"
+    "*/firmware/*RTP.bin"
 
     # VINTF manifests and fragments
     "*/etc/vintf/manifest.xml"
@@ -337,6 +338,12 @@ VENDOR_SKIP_FILES=(
 declare -A VENDOR_MODULE_DEST
 
 VENDOR_MODULE_DEST=(
+    ["odm/firmware/0_click_P_RTP.bin"]="vendor/etc/vibrator/effect_0.bin"
+    ["odm/firmware/1_doubelClick_P_RTP.bin"]="vendor/etc/vibrator/effect_1.bin"
+    ["odm/firmware/2_tick_P_RTP.bin"]="vendor/etc/vibrator/effect_2.bin"
+    ["odm/firmware/3_thud_P_RTP.bin"]="vendor/etc/vibrator/effect_3.bin"
+    ["odm/firmware/4_pop_P_RTP.bin"]="vendor/etc/vibrator/effect_4.bin"
+    ["odm/firmware/5_heavyClick_P_RTP.bin"]="vendor/etc/vibrator/effect_5.bin"
 )
 
 VENDOR_MODULE_FILES=(
