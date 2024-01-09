@@ -45,6 +45,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio@2.1.vendor \
     android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio-V2-ndk.vendor \
     vendor.qti.hardware.bluetooth.audio-V1-ndk.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
@@ -61,7 +62,10 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
-    android.hardware.camera.provider@2.7.vendor
+    android.hardware.camera.provider@2.7.vendor \
+    android.hardware.camera.common-V1-ndk.vendor \
+    android.hardware.camera.device-V1-ndk.vendor \
+    android.hardware.camera.provider-V1-ndk.vendor
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.aon@1.3.vendor \
@@ -100,6 +104,10 @@ PRODUCT_PACKAGES += \
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# DumpState
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate-V1-ndk.vendor
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -130,6 +138,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gralloc.default
 
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss-V2-ndk.vendor
+
 # GUI
 PRODUCT_PACKAGES += \
     libgui_vendor
@@ -144,6 +156,10 @@ PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor \
     libhwbinder.vendor \
     libhidltransport.vendor
+
+# Identity
+PRODUCT_PACKAGES += \
+    android.hardware.identity-V4-ndk.vendor
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -165,6 +181,10 @@ PRODUCT_COPY_FILES += \
 # Libchrome
 PRODUCT_PACKAGES += \
     libchrome.vendor
+
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light-V2-ndk.vendor
 
 # Media
 PRODUCT_PACKAGES += \
@@ -199,6 +219,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
+    android.hardware.power-V3-ndk.vendor \
     vendor.qti.hardware.perf@2.3.vendor
 
 # ProtoBuf
@@ -215,6 +236,14 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio@1.6.vendor \
     android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio.config-V1-ndk.vendor \
+    android.hardware.radio-V1-ndk.vendor \
+    android.hardware.radio.sim-V1-ndk.vendor \
+    android.hardware.radio.messaging-V1-ndk.vendor \
+    android.hardware.radio.modem-V1-ndk.vendor \
+    android.hardware.radio.network-V1-ndk.vendor \
+    android.hardware.radio.voice-V1-ndk.vendor \
+    android.hardware.radio.data-V1-ndk.vendor \
     libril
 
 # RenderScript
@@ -231,7 +260,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0.vendor \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.security.keymint-V1-ndk.vendor \
+    android.hardware.security.keymint-V2-ndk.vendor \
+    android.hardware.security.rkp-V1-ndk.vendor \
     android.hardware.security.rkp-V3-ndk.vendor \
+    android.hardware.security.sharedsecret-V1-ndk.vendor \
     android.system.keystore2-V1-ndk.vendor \
     android.hardware.hardware_keystore.xml \
     libkeymaster_messages.vendor
@@ -240,7 +272,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
     sensors.dynamic_sensor_hal \
-    libsensorndkbridge
+    libsensorndkbridge \
+    android.frameworks.sensorservice@1.0.vendor
 
 # ServiceTracker
 PRODUCT_PACKAGES += \
@@ -290,6 +323,11 @@ PRODUCT_PACKAGES += \
 # Vendor configurations
 $(call inherit-product, vendor/xiaomi/socrates/socrates-vendor.mk)
 
+
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vndk/libstagefright_foundation.so \
+    prebuilts/vndk/v33/arm64/arch-arm-armv8-a/shared/vndk-core/libstagefright_bufferqueue_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/vndk/libstagefright_bufferqueue_helper.so
+
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservice \
@@ -304,5 +342,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.hostapd@1.0.vendor \
     android.hardware.wifi.supplicant@1.0.vendor \
     android.hardware.wifi@1.6.vendor \
+    android.hardware.wifi.hostapd-V1-ndk.vendor \
+    android.hardware.wifi.supplicant-V1-ndk.vendor \
     android.system.wifi.keystore@1.0.vendor \
     vendor.qti.hardware.wifi.supplicant-V1-ndk.vendor
