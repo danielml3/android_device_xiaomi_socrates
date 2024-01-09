@@ -64,6 +64,15 @@ function blob_fixup() {
         odm/lib64/libmt@1.3.so)
             "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
+        vendor/etc/init/hw/init.batterysecret.rc)
+            sed -i s/seclabel\ u:r:batterysecret:s0//g "${2}"
+            ;;
+        vendor/etc/init/hw/init.mi_thermald.rc)
+            sed -i s/seclabel\ u:r:mi_thermald:s0//g "${2}"
+            ;;
+        vendor/etc/init/mi_ric.rc)
+            sed -i s/seclabel\ u:r:mi_ric:s0//g "${2}"
+            ;;
     esac
 }
 
