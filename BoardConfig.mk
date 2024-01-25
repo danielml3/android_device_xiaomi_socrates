@@ -44,7 +44,7 @@ BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 disable_dma32=on swinfo.fingerprint=$(LINEAGE_VERSION) mtdoops.fingerprint=$(LINEAGE_VERSION)
 
 BOARD_BOOTCONFIG := androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 androidboot.console=ttyMSM0
-BOARD_BOOTCONFIG += androidboot.selinux=permissive
+BOARD_BOOTCONFIG += androidboot.selinux=enforcing
 
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
@@ -90,6 +90,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
+
+# SEPolicy
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+include device/qcom/sepolicy_vndr/sm8550/SEPolicy.mk
 
 # System properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop

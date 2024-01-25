@@ -1,0 +1,3 @@
+type vendor_mfp-daemon, domain;
+
+binder_call(vendor_mfp-daemon, hal_fingerprint_default)

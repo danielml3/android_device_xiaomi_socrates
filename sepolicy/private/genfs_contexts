@@ -1,0 +1,2 @@
+# Touchscreen
+genfscon sysfs /devices/platform/goodix_ts.0/fod_enable u:object_r:sysfs_goodix_touch:s0

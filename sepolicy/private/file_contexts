@@ -1,0 +1,3 @@
+# System services
+/system/bin/hw/vibratorfeature-wrapper u:object_r:hal_vibrator_default_exec:s0
+/system/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.socrates u:object_r:hal_fingerprint_default_exec:s0

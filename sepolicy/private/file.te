@@ -1,0 +1,5 @@
+# Display
+type vendor_sysfs_displayfeature, sysfs_type, fs_type;
+
+# Touchscreen
+type sysfs_goodix_touch, sysfs_type, fs_type;
