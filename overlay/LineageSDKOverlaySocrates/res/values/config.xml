@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+     <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs">
+        <item>/system/priv-app/KeyHandlerSocrates/KeyHandlerSocrates.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses">
+        <item>org.lineageos.keyhandler.socrates.KeyHandler</item>
+    </string-array>
+</resources>

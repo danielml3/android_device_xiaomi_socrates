@@ -1,0 +1,22 @@
+/*
+ * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+android_app {
+    name: "KeyHandlerSocrates",
+
+    defaults: ["SettingsLibDefaults"],
+
+    srcs: ["src/**/*.kt"],
+
+    manifest: "AndroidManifest.xml",
+
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+
+    optimize: {
+        enabled: false,
+    },
+}

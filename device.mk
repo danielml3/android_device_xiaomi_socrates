@@ -249,6 +249,7 @@ PRODUCT_PACKAGES += \
 # Overlay
 PRODUCT_PACKAGES += \
     FrameworkResOverlaySocrates \
+    LineageSDKOverlaySocrates \
     SystemUIOverlaySocrates \
     SettingsOverlaySocrates
 
@@ -400,3 +401,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant-V1-ndk.vendor
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    KeyHandlerSocrates
