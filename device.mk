@@ -22,6 +22,7 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.socrates.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.socrates.rc \
     $(LOCAL_PATH)/init/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
 
 # Keylayout
@@ -61,3 +62,7 @@ $(call inherit-product, vendor/xiaomi/socrates/socrates-vendor.mk)
 # Vibrator
 PRODUCT_PACKAGES += \
     vibratorfeature-wrapper
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts

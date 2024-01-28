@@ -1,0 +1,19 @@
+/*
+ * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+android_app {
+    name: "XiaomiParts",
+
+    defaults: ["SettingsLibDefaults"],
+
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+
+    manifest: "AndroidManifest.xml",
+
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+}

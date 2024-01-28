@@ -1,0 +1,16 @@
+<!--
+    SPDX-FileCopyrightText: 2024 The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="xiaomi_parts_title">XiaomiParts</string>
+    <string name="xiaomi_parts_summary">Device-specific settings</string>
+
+    <!-- Touchscreen -->
+    <string name="touchscreen_category_title">Touchscreen</string>
+
+    <string name="high_polling_rate_title">High polling rate</string>
+    <string name="high_polling_rate_summary">Increase the touchscreen\'s polling rate</string>
+    <string name="screen_off_fod_title">Screen off fingerprint</string>
+    <string name="screen_off_fod_summary">Enables fingerprint detection while the screen is off</string>
+</resources>

@@ -1,0 +1,2 @@
+on boot
+    chown system system /sys/devices/platform/goodix_ts.0/fod_enable

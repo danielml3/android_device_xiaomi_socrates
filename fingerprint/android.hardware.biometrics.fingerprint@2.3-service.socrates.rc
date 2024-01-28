@@ -2,6 +2,3 @@ service system.fps_hal_socrates /system/bin/hw/android.hardware.biometrics.finge
     class late_start
     user system
     group system input uhid
-
-on boot
-    write /sys/devices/platform/goodix_ts.0/fod_enable 1

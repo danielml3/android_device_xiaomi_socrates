@@ -1,0 +1,21 @@
+<!--
+    SPDX-FileCopyrightText: 2024 The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/touchscreen_category_title">
+        
+        <org.lineageos.xiaomiparts.preferences.HighPollingRatePreference
+            android:key="high_polling_rate"
+            android:title="@string/high_polling_rate_title"
+            android:summary="@string/high_polling_rate_summary"
+            android:defaultValue="false"/>
+
+        <org.lineageos.xiaomiparts.preferences.ScreenOffFodPreference
+            android:key="screen_off_fod"
+            android:title="@string/screen_off_fod_title"
+            android:summary="@string/screen_off_fod_summary"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>
