@@ -182,6 +182,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# Kernel (DTB)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dtb/dtb.img:dtb.img
+
 # Libchrome
 PRODUCT_PACKAGES += \
     libchrome.vendor
