@@ -24,7 +24,9 @@ AB_OTA_PARTITIONS := \
     system_ext \
     vbmeta \
     vbmeta_system \
-    vendor
+    vendor \
+    vendor_boot \
+    vendor_dlkm
 
 # API level
 BOARD_API_LEVEL := 33
@@ -71,8 +73,18 @@ BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_INIT_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 
+BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8550
-TARGET_NO_KERNEL_OVERRIDE := true
+TARGET_KERNEL_CONFIG := \
+    gki_defconfig \
+    vendor/kalama_GKI.config \
+    vendor/socrates_GKI.config
+KERNEL_LTO := none
+
+BOOT_KERNEL_MODULES := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.vendor_dlkm))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.first_stage))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD  := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
@@ -86,7 +98,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_METADATA_PARTITION := true
 
-BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor
+BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
 BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 9659482112 # (BOARD_SUPER_PARTITION_SIZE - 4 MiB)
 BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
 
@@ -95,9 +107,6 @@ $(foreach p, $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST))
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 include vendor/lineage/config/BoardConfigReservedSize.mk
-
-# Prebuilts
-include device/xiaomi/socrates-prebuilt/BoardConfigPrebuilt.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := kalama
