@@ -1,0 +1,3 @@
+service touch_report /odm/bin/touch_report
+    disabled
+    override

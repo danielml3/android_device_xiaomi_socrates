@@ -174,6 +174,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# Kernel (DTB)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dtb/dtb.img:dtb.img
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/goodix_ts.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/goodix_ts.kl
