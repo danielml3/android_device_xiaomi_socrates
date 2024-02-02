@@ -94,7 +94,6 @@ private:
     std::mutex mClientCallbackMutex;
 
     void setFodPressed(bool pressed);
-    void disableLHBM();
 };
 
 }  // namespace implementation

@@ -149,7 +149,7 @@ Return<void> BiometricsFingerprint::onAcquired(uint64_t deviceId, FingerprintAcq
     std::lock_guard<std::mutex> lock(mClientCallbackMutex);
 
     if (acquiredInfo != FingerprintAcquiredInfo::ACQUIRED_VENDOR) {
-        disableLHBM();
+        mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, 0);
     }
 
     return mClientCallback->onAcquired(deviceId, acquiredInfo, vendorCode);
@@ -178,12 +178,6 @@ Return<void> BiometricsFingerprint::onEnumerate(uint64_t deviceId, uint32_t fing
 void BiometricsFingerprint::setFodPressed(bool pressed) {
     mExtension->extCmd(CMD_FOD_LHBM_STATUS, pressed);
     mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, pressed);
-}
-
-void BiometricsFingerprint::disableLHBM() {
-    std::ofstream disp_param(DISP_PARAM_PATH);
-    disp_param << "9 0";
-    disp_param.close();
 }
 
 IBiometricsFingerprint* BiometricsFingerprint::getInstance() {

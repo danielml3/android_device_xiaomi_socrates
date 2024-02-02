@@ -4,6 +4,3 @@ binder_call(hal_fingerprint_default, vendor_mfp-daemon)
 binder_call(hal_fingerprint_default, hal_touchfeature_xiaomi_default)
 
 add_hwservice(hal_fingerprint_default, hal_touchfeature_xiaomi_hwservice)
-
-allow hal_fingerprint_default vendor_sysfs_displayfeature:file w_file_perms;
-allow hal_fingerprint_default vendor_sysfs_displayfeature:dir r_dir_perms;
