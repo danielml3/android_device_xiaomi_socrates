@@ -17,5 +17,11 @@
             android:title="@string/screen_off_fod_title"
             android:summary="@string/screen_off_fod_summary"
             android:defaultValue="false"/>
+
+        <org.lineageos.xiaomiparts.preferences.DoubleTapToWakePreference
+            android:key="double_tap_to_wake"
+            android:title="@string/double_tap_to_wake_title"
+            android:summary="@string/double_tap_to_wake_summary"
+            android:defaultValue="false"/>
     </PreferenceCategory>
 </PreferenceScreen>

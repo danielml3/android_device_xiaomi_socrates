@@ -14,12 +14,14 @@ import org.lineageos.xiaomiparts.Constants
 import org.lineageos.xiaomiparts.preferences.RestoreOnBootPreference
 import org.lineageos.xiaomiparts.preferences.HighPollingRatePreference
 import org.lineageos.xiaomiparts.preferences.ScreenOffFodPreference
+import org.lineageos.xiaomiparts.preferences.DoubleTapToWakePreference
 
 class BootCompletedReceiver : BroadcastReceiver() {
     companion object {
         private val preferencesToRestore = listOf<RestoreOnBootPreference>(
             HighPollingRatePreference,
-            ScreenOffFodPreference
+            ScreenOffFodPreference,
+            DoubleTapToWakePreference
         )
     }
 

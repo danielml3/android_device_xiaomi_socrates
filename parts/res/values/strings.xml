@@ -13,4 +13,6 @@
     <string name="high_polling_rate_summary">Increase the touchscreen\'s polling rate</string>
     <string name="screen_off_fod_title">Screen off fingerprint</string>
     <string name="screen_off_fod_summary">Enables fingerprint detection while the screen is off</string>
+    <string name="double_tap_to_wake_title">Double tap to wake</string>
+    <string name="double_tap_to_wake_summary">Double press the touchscreen to wake up the device</string>
 </resources>
