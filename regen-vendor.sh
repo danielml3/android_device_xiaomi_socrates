@@ -13,8 +13,8 @@ VENDOR_SKIP_FILES=(
 
     # Audio
     "*/etc/acdbdata/nn_ns_models/*"
-    "*android.hardware.audio*.so"
-    "*android.hardware.soundtrigger*.so"
+    "*/android.hardware.audio*.so"
+    "*/android.hardware.soundtrigger*.so"
     "*/soundfx/libaudiopreprocessing.so"
     "*/soundfx/libbundlewrapper.so"
     "*/soundfx/libdownmix.so"
@@ -37,7 +37,7 @@ VENDOR_SKIP_FILES=(
 
     # ADSP
     "*/lib/rfsa/adsp/libvpt_action_recognition.so"
-    "vendor/lib/rfsa/adsp/*.bin"
+    "*/lib/rfsa/adsp/*.bin"
 
     # ANT
     "*/com.dsi.ant@1.0.so"
@@ -68,14 +68,14 @@ VENDOR_SKIP_FILES=(
     "*/libbluetooth_audio_session_aidl.so"
 
     # Boot control
-    "*android.hardware.boot*"
+    "*/android.hardware.boot*"
     "*/libboot_control_qti.so"
 
     # BoringSSL
     "*/boringssl*"
 
     # Build properties
-    "*build.prop"
+    "*/build.prop"
 
     # CapabilityConfigstore
     "*/vendor.qti.hardware.capabilityconfigstore@1.0.so"
@@ -87,11 +87,14 @@ VENDOR_SKIP_FILES=(
     "*/com.xiaomi.plugin.miaiie.so"
 
     # Camera
+    "*/android.hardware.camera.provider@2.7-virtual-camera-service"
+    "*/android.hardware.camera.provider@2.7-virtual-camera-service.rc"
     "*/libcamera2ndk_vendor.so"
     "*/android.hardware.camera*.so"
     "*/android.frameworks.cameraservice*.so"
     "*/vendor.qti.hardware.camera.aon@1.[0-3].so"
     "*/vendor.qti.hardware.camera.postproc@1.0.so"
+    "*/vendor.xiaomi.hardware.vcamera.provider.xml"
 
     # Camera files
     "*/etc/audio/test.wav"
@@ -221,6 +224,9 @@ VENDOR_SKIP_FILES=(
     "*/libnfnetlink.so"
     "*/libpcap.so"
 
+    # Notice files
+    "*/NOTICE.xml.gz"
+
     # NFC
     "*/android.hardware.nfc*.so"
     "*/nqnfcinfo"
@@ -285,6 +291,11 @@ VENDOR_SKIP_FILES=(
     # Time
     "*/local_time.default.so"
 
+    # TLPd
+    "*/bin/tlpd"
+    "*/etc/init/tlpd.rc"
+    "*/lib64/libtlpd*.so"
+
     # Touch
     "*/bin/touch_report"
 
@@ -328,7 +339,6 @@ VENDOR_SKIP_FILES=(
     "*/etc/vintf/manifest.xml"
     "*/etc/vintf/manifest_*.xml"
     "vendor/etc/vintf/compatibility_matrix.xml"
-    "vendor/etc/vintf/manifest/c2_manifest_vendor.xml"
 
     # WiFi
     "*/android.hardware.wifi@1.[0-6].so"
