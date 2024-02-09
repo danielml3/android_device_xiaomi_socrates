@@ -73,6 +73,10 @@ function blob_fixup() {
         vendor/etc/init/mi_ric.rc)
             sed -i s/seclabel\ u:r:mi_ric:s0//g "${2}"
             ;;
+        vendor/etc/init/mpbe-service.rc)
+            sed -i s/seclabel\ u:r:mpbe:s0//g "${2}"
+            ;;
+
     esac
 }
 
@@ -83,4 +87,4 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 extract "${MY_DIR}/proprietary-files-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
-"${MY_DIR}/setup-makefiles.sh"
+"${MY_DIR}/setup-makefiles.sh" "${SRC}"

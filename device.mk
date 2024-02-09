@@ -149,7 +149,8 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
-    android.hardware.health@2.1.vendor
+    android.hardware.health@2.1.vendor \
+    android.hardware.health-V1-ndk.vendor
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -224,6 +225,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
     android.hardware.power-V3-ndk.vendor \
+    android.hardware.power-V4-ndk.vendor \
     vendor.qti.hardware.perf@2.3.vendor
 
 # ProtoBuf
