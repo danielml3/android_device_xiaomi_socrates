@@ -89,6 +89,7 @@ VENDOR_SKIP_FILES=(
     # Camera
     "*/android.hardware.camera.provider@2.7-virtual-camera-service"
     "*/android.hardware.camera.provider@2.7-virtual-camera-service.rc"
+    "*/camera.device@*.so"
     "*/libcamera2ndk_vendor.so"
     "*/android.hardware.camera*.so"
     "*/android.frameworks.cameraservice*.so"
