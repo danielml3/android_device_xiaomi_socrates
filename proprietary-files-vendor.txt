@@ -953,7 +953,6 @@ vendor/bin/GPTEE_Sample_client
 vendor/bin/hal_proxy_daemon
 vendor/bin/hdcp1prov
 vendor/bin/hdcp2p2prov
-vendor/bin/hostapd_cli
 vendor/bin/hw/android.hardware.audio.service_64
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti
 vendor/bin/hw/android.hardware.contexthub-service.qmi
@@ -967,11 +966,9 @@ vendor/bin/hw/android.hardware.nfc@1.2-service-st
 vendor/bin/hw/android.hardware.power-service
 vendor/bin/hw/android.hardware.security.keymint-service-qti
 vendor/bin/hw/android.hardware.usb@1.2-service-qti
-vendor/bin/hw/android.hardware.wifi@1.0-service
 vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/dolbycodec2
 vendor/bin/hw/fbo-test
-vendor/bin/hw/hostapd
 vendor/bin/hwinfo
 vendor/bin/hw/mfp-daemon
 vendor/bin/hw/miperf_client
@@ -1029,7 +1026,6 @@ vendor/bin/hw/vendor.xiaomi.hardware.swap@1.0-service
 vendor/bin/hw/vendor.xiaomi.hidl.minet@1.0-service
 vendor/bin/hw/vendor.xiaomi.hidl.miwill@1.0-service
 vendor/bin/hw/vendor.xiaomi.modem.qms@1.0-service
-vendor/bin/hw/wpa_supplicant
 vendor/bin/imsdaemon
 vendor/bin/ims-dataservice-daemon
 vendor/bin/ims_rtp_daemon
@@ -1183,7 +1179,6 @@ vendor/bin/wificfrtool
 vendor/bin/wifidisplayhalservice
 vendor/bin/wifilearner
 vendor/bin/wlanramdumpcollector
-vendor/bin/wpa_cli
 vendor/bin/xiaomi_cellinfo_test
 vendor/bin/xiaomi_extend_cmd
 vendor/bin/xtra-daemon
@@ -1331,8 +1326,6 @@ vendor/etc/init/android.hardware.nfc@1.2-service-st.rc
 vendor/etc/init/android.hardware.power-service.rc
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/init/android.hardware.usb@1.2-service-qti.rc
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/init/blackbox.rc
 vendor/etc/init/cnd.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
@@ -1346,7 +1339,6 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/etc/init/dumpstate-xiaomi.rc
 vendor/etc/init/ffu.rc
 vendor/etc/init/general_service.rc
-vendor/etc/init/hostapd.android.rc
 vendor/etc/init/hw/init.batterysecret.rc
 vendor/etc/init/hw/init.mi_thermald.rc
 vendor/etc/init/hw/init.qcom.factory.rc
@@ -1737,9 +1729,6 @@ vendor/etc/vintf/manifest/android.hardware.radio.sim.xml
 vendor/etc/vintf/manifest/android.hardware.radio.voice.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.usb@1.2-service.xml
-vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
-vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
-vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
 vendor/etc/vintf/manifest/blackbox.xml
 vendor/etc/vintf/manifest/bluetooth_audio.xml
 vendor/etc/vintf/manifest/bttpi-saidl.xml
@@ -1802,7 +1791,6 @@ vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/passpointProfile.conf
 vendor/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/vendor_cmd.xml
-vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/etc/xiaomi_ecc_list_preference.xml
 vendor/etc/xiaomi_ecc_list.xml
@@ -1982,7 +1970,6 @@ vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libcert_parse.wpa_s.so
 vendor/lib64/libcheckpid.so
-vendor/lib64/libcld80211.so
 vendor/lib64/libclstc_algorithm_adapter.so
 vendor/lib64/libclstc_gcp_adapter.so
 vendor/lib64/libclstc_tm.so
@@ -2106,8 +2093,6 @@ vendor/lib64/libkernelmanager.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/liblearningmodule.so
 vendor/lib64/liblightninglaunches.so
@@ -2489,11 +2474,7 @@ vendor/lib64/libwfduibcsink_vendor.so
 vendor/lib64/libwfduibcsrcinterface_vendor.so
 vendor/lib64/libwfduibcsrc_vendor.so
 vendor/lib64/libwfdutils_proprietary.so
-vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal.so
 vendor/lib64/libwms.so
-vendor/lib64/libwpa_client.so
 vendor/lib64/libwqe.so
 vendor/lib64/libwvaidl.so
 vendor/lib64/libxiaomi_diag.so
@@ -2886,7 +2867,6 @@ vendor/lib/libcdfw.so
 vendor/lib/libcdsp_default_listener.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libcheckpid.so
-vendor/lib/libcld80211.so
 vendor/lib/libclstc_algorithm_adapter.so
 vendor/lib/libclstc_gcp_adapter.so
 vendor/lib/libclstc_tm.so
@@ -3307,10 +3287,7 @@ vendor/lib/libvpplibrary.so
 vendor/lib/libvpptestutils.so
 vendor/lib/libvui_dmgr_client.so
 vendor/lib/libvui_dmgr.so
-vendor/lib/libwifi-hal-ctrl.so
-vendor/lib/libwifi-hal-qcom.so
 vendor/lib/libwms.so
-vendor/lib/libwpa_client.so
 vendor/lib/libwqe.so
 vendor/lib/libxiaomi_qcril.so
 vendor/lib/libxlog.so
