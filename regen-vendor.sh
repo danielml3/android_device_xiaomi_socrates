@@ -341,11 +341,30 @@ VENDOR_SKIP_FILES=(
     "vendor/etc/vintf/compatibility_matrix.xml"
 
     # WiFi
+    "*/android.hardware.wifi@1.0-service*"
     "*/android.hardware.wifi@1.[0-6].so"
     "*/android.hardware.wifi.hostapd@1.0.so"
     "*/android.hardware.wifi.supplicant@1.0.so"
-    "*/vendor.qti.hardware.wifi.supplicant-V1-ndk.so"
+    "*/android.hardware.wifi.supplicant.xml"
+    "*/android.hardware.wifi.hostapd.xml"
+    "*/android.hardware.wifi.supplicant-service.rc"
     "*/android.system.wifi.keystore@1.0.so"
+    "*/vendor.qti.hardware.wifi.supplicant-V1-ndk.so"
+    "*/hostapd"
+    "*/hostapd_cli"
+    "*/hostapd.android.rc"
+    "*/libcld80211.so"
+    "*/libwifi-hal-ctrl.so"
+    "*/libwifi-hal-qcom.so"
+    "*/libwpa_client.so"
+    "*/libkeystore-engine-wifi-hidl.so"
+    "*/libkeystore-wifi-hidl.so"
+    "*/libwifi-hal-ctrl.so"
+    "*/libwifi-hal-qcom.so"
+    "*/libwifi-hal.so"
+    "*/wpa_cli"
+    "*/wpa_supplicant"
+    "*/wpa_supplicant.conf"
 )
 
 declare -A VENDOR_MODULE_DEST

@@ -349,10 +349,19 @@ $(call soong_config_set, vibrator, vibratortargets, vibratoraidlV2target)
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi.hostapd@1.0.vendor \
-    android.hardware.wifi.supplicant@1.0.vendor \
-    android.hardware.wifi@1.6.vendor \
-    android.hardware.wifi.hostapd-V1-ndk.vendor \
-    android.hardware.wifi.supplicant-V1-ndk.vendor \
-    android.system.wifi.keystore@1.0.vendor \
-    vendor.qti.hardware.wifi.supplicant-V1-ndk.vendor
+    android.hardware.wifi-service \
+    wpa_cli \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    hostapd \
+    hostapd_cli \
+    libcld80211 \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    libwpa_client \
+    libkeystore-engine-wifi-hidl \
+    libkeystore-wifi-hidl \
+    libwifi-hal
+
+PRODUCT_PACKAGES += \
+    android.hardware.wifi.supplicant-V1-ndk.vendor
