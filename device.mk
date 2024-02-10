@@ -36,6 +36,25 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl \
     android.hardware.soundtrigger@2.3-impl
 
+PRODUCT_PACKAGES += \
+    audioadsprpcd \
+    android.hardware.audio.service_64.rc \
+    audio.primary.kalama \
+    sound_trigger.primary.kalama \
+    libagm_compress_plugin \
+    libagm_mixer_plugin \
+    libagm_pcm_plugin \
+    libagmclient \
+    libaudiochargerlistener \
+    libbatterylistener \
+    libfmpal \
+    libhfp_pal \
+    libsndcardparser \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libvolumelistener
+
 # Automotive
 PRODUCT_PACKAGES += \
     android.hardware.automotive.vehicle@2.0-manager-lib \
@@ -185,6 +204,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.socrates.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.socrates.rc \
     $(LOCAL_PATH)/init/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
 
+# IPA
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_Filter_cfg.xml \
+    IPACM_cfg.xml
+
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example
@@ -213,6 +238,11 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_common.vendor \
     libvorbisidec.vendor \
     libvpx.vendor
+
+PRODUCT_PACKAGES += \
+    libOmxCore \
+    libmm-omxcore \
+    libstagefrighthw
 
 # Network
 PRODUCT_PACKAGES += \
@@ -362,13 +392,22 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi.hostapd@1.0.vendor \
-    android.hardware.wifi.supplicant@1.0.vendor \
-    android.hardware.wifi@1.6.vendor \
-    android.hardware.wifi.hostapd-V1-ndk.vendor \
-    android.hardware.wifi.supplicant-V1-ndk.vendor \
-    android.system.wifi.keystore@1.0.vendor \
-    vendor.qti.hardware.wifi.supplicant-V1-ndk.vendor
+    android.hardware.wifi-service \
+    wpa_cli \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    hostapd \
+    hostapd_cli \
+    libcld80211 \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    libwpa_client \
+    libkeystore-engine-wifi-hidl \
+    libkeystore-wifi-hidl \
+    libwifi-hal
+
+PRODUCT_PACKAGES += \
+    android.hardware.wifi.supplicant-V1-ndk.vendor
 
 # WiFi Display
 PRODUCT_PACKAGES += \
