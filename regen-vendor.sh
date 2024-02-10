@@ -1488,6 +1488,18 @@ VENDOR_SKIP_FILES=(
     "vendor/etc/vintf/manifest_kalama.xml"
 
     # WiFi
+    "vendor/bin/hostapd_cli"
+    "vendor/bin/hw/android.hardware.wifi@1.0-service"
+    "vendor/bin/hw/hostapd"
+    "vendor/bin/hw/wpa_supplicant"
+    "vendor/bin/wpa_cli"
+    "vendor/etc/init/android.hardware.wifi@1.0-service.rc"
+    "vendor/etc/init/android.hardware.wifi.supplicant-service.rc"
+    "vendor/etc/init/hostapd.android.rc"
+    "vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml"
+    "vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml"
+    "vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml"
+    "vendor/etc/wifi/wpa_supplicant.conf"
     "vendor/lib64/android.hardware.wifi@1.0.so"
     "vendor/lib64/android.hardware.wifi@1.1.so"
     "vendor/lib64/android.hardware.wifi@1.2.so"
@@ -1497,7 +1509,18 @@ VENDOR_SKIP_FILES=(
     "vendor/lib64/android.hardware.wifi@1.6.so"
     "vendor/lib64/android.hardware.wifi.supplicant@1.0.so"
     "vendor/lib64/android.system.wifi.keystore@1.0.so"
+    "vendor/lib64/libcld80211.so"
+    "vendor/lib64/libkeystore-engine-wifi-hidl.so"
+    "vendor/lib64/libkeystore-wifi-hidl.so"
+    "vendor/lib64/libwifi-hal-ctrl.so"
+    "vendor/lib64/libwifi-hal-qcom.so"
+    "vendor/lib64/libwifi-hal.so"
+    "vendor/lib64/libwpa_client.so"
     "vendor/lib64/vendor.qti.hardware.wifi.supplicant-V1-ndk.so"
+    "vendor/lib/libcld80211.so"
+    "vendor/lib/libwifi-hal-ctrl.so"
+    "vendor/lib/libwifi-hal-qcom.so"
+    "vendor/lib/libwpa_client.so"
 )
 
 declare -A VENDOR_MODULE_DEST
