@@ -30,6 +30,58 @@ VENDOR_SKIP_FILES=(
     "*/libnbaio_mono.so"
     "*/libalsautils.so"
     "*/libtinycompress.so"
+    "*/manifest_non_qmaa.xml"
+    "*/manifest_non_qmaa_extn.xml"
+
+    "*/bin/PalTest"
+    "*/bin/agmcap"
+    "*/bin/agmcompresscap"
+    "*/bin/agmcompressplay"
+    "*/bin/agmhostless"
+    "*/bin/agmplay"
+    "*/bin/agmvoiceui"
+    "*/bin/audioadsprpcd"
+    "*/etc/init/android.hardware.audio.service_64.rc"
+    "*/etc/init/vendor.qti.audio-adsprpc-service.rc"
+    "*/lib/hw/audio.primary.kalama.so"
+    "*/lib/hw/sound_trigger.primary.kalama.so"
+    "*/lib/libagm_compress_plugin.so"
+    "*/lib/libagm_mixer_plugin.so"
+    "*/lib/libagm_pcm_plugin.so"
+    "*/lib/libagmclient.so"
+    "*/lib/libagmmixer.so"
+    "*/lib/libaudiochargerlistener.so"
+    "*/lib/libbatterylistener.so"
+    "*/lib/libfmpal.so"
+    "*/lib/libhfp_pal.so"
+    "*/lib/libpalclient.so"
+    "*/lib/libsndcardparser.so"
+    "*/lib/soundfx/libqcompostprocbundle.so"
+    "*/lib/soundfx/libqcomvisualizer.so"
+    "*/lib/soundfx/libqcomvoiceprocessing.so"
+    "*/lib/soundfx/libvolumelistener.so"
+    "*/lib/vendor.qti.hardware.AGMIPC@1.0.so"
+    "*/lib/vendor.qti.hardware.pal@1.0.so"
+    "*/lib64/hw/audio.primary.kalama.so"
+    "*/lib64/hw/sound_trigger.primary.kalama.so"
+    "*/lib64/libagm_compress_plugin.so"
+    "*/lib64/libagm_mixer_plugin.so"
+    "*/lib64/libagm_pcm_plugin.so"
+    "*/lib64/libagmclient.so"
+    "*/lib64/libagmmixer.so"
+    "*/lib64/libaudiochargerlistener.so"
+    "*/lib64/libbatterylistener.so"
+    "*/lib64/libfmpal.so"
+    "*/lib64/libhfp_pal.so"
+    "*/lib64/liboffloadhal.so"
+    "*/lib64/libpalclient.so"
+    "*/lib64/libsndcardparser.so"
+    "*/lib64/soundfx/libqcompostprocbundle.so"
+    "*/lib64/soundfx/libqcomvisualizer.so"
+    "*/lib64/soundfx/libqcomvoiceprocessing.so"
+    "*/lib64/soundfx/libvolumelistener.so"
+    "*/lib64/vendor.qti.hardware.AGMIPC@1.0.so"
+    "*/lib64/vendor.qti.hardware.pal@1.0.so"
 
     # Automotive
     "*/android.hardware.automotive.vehicle*.so"
@@ -66,6 +118,7 @@ VENDOR_SKIP_FILES=(
     "*/audio.bluetooth.default.so"
     "*/libbluetooth_audio_session.so"
     "*/libbluetooth_audio_session_aidl.so"
+    "*/btconfig"
 
     # Boot control
     "*/android.hardware.boot*"
@@ -178,6 +231,12 @@ VENDOR_SKIP_FILES=(
     "*/libhidltransport.so"
     "*/libhwbinder.so"
 
+    # IPA
+    "*/ipacm"
+    "*/ipacm.rc"
+    "*/IPACM_Filter_cfg.xml"
+    "*/IPACM_cfg.xml"
+
     # IR
     "*/android.hardware.ir-service.example*"
 
@@ -210,6 +269,9 @@ VENDOR_SKIP_FILES=(
     "*/libstagefright_enc_common.so"
     "*/libstagefright_flacdec.so"
     "*/libavservices_minijail.so"
+    "*/libOmxCore.so"
+    "*/libmm-omxcore.so"
+    "*/libstagefrighthw.so"
 
     # Memtrack
     "*/vendor.qti.hardware.memtrack-service"
@@ -378,6 +440,11 @@ VENDOR_MODULE_DEST=(
 
 VENDOR_MODULE_FILES=(
     "*.apk"
+    "libaudio_log_utils.so"
+    "libar-pal.so"
+    "libagm.so"
+    "vendor.qti.hardware.AGMIPC@1.0-impl.so"
+    "vendor.qti.hardware.pal@1.0-impl.so"
 )
 
 VENDOR_SKIP_LINKS=(
