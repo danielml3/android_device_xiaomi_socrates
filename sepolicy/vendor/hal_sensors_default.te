@@ -1,0 +1,5 @@
+allow hal_sensors_default sysfs_touch_dev:file rw_file_perms;
+allow hal_sensors_default vendor_sysfs_graphics:dir r_dir_perms;
+allow hal_sensors_default vendor_sysfs_graphics:file r_file_perms;
+binder_call(hal_sensors_client, hal_sensors_server)
+binder_call(hal_sensors_server, servicemanager)

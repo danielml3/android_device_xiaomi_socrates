@@ -1,0 +1,11 @@
+type hal_dumpstate_impl, domain;
+type hal_dumpstate_impl_exec, exec_type, file_type, vendor_file_type;
+
+allow hal_dumpstate_impl device:dir search;
+allow hal_dumpstate_impl dumpstate:fifo_file write;
+allow hal_dumpstate_impl shell_data_file:file getattr;
+allow hal_dumpstate_impl vfat:dir { getattr search };
+allow hal_dumpstate_impl vfat:file { getattr open read setattr };
+binder_use(hal_dumpstate_impl)
+hal_server_domain(hal_dumpstate_impl, hal_dumpstate)
+init_daemon_domain(hal_dumpstate_impl)

@@ -1,0 +1,56 @@
+# Batterysecret
+/(vendor|system/vendor)/bin/batterysecret u:object_r:batterysecret_exec:s0
+
+# Camera
+/(odm|vendor)/bin/hw/vendor\.qti\.camera\.provider-service_64 u:object_r:hal_camera_default_exec:s0
+/mnt/vendor/persist/camera(/.*)? u:object_r:camera_persist_file:s0
+/odm/lib(64)?/libmialgo_utils\.so u:object_r:same_process_hal_file:s0
+/odm/lib(64)?/libmiocr\.so u:object_r:same_process_hal_file:s0
+/odm/lib(64)?/libxmi_slow_motion_mein\.so u:object_r:same_process_hal_file:s0
+/persist/camera(/.*)? u:object_r:camera_persist_file:s0
+
+# DisplayFeature
+/(vendor|system/vendor)/bin/displayfeature u:object_r:vendor_displayfeature_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service u:object_r:vendor_hal_displayfeature_xiaomi_default_exec:s0
+/dev/mi_display/disp_feature u:object_r:vendor_displayfeature_device:s0
+/dev/mi_display/disp_log u:object_r:vendor_displaylog_device:s0
+/sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)? u:object_r:vendor_sysfs_displayfeature:s0
+
+# Dumpstate
+/(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate-service.xiaomi u:object_r:hal_dumpstate_impl_exec:s0
+
+# Fingerprint
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
+/data/vendor/fpdump(/.*)? u:object_r:vendor_fingerprint_data_file_fpdump:s0
+/data/vendor/goodix(/.*)? u:object_r:vendor_fingerprint_data_file:s0
+/dev/goodix_fp u:object_r:vendor_fingerprint_device:s0
+/mnt/vendor/persist/goodix(/.*)? u:object_r:vendor_fingerprint_data_file:s0
+
+# IR
+/dev/ir_spi u:object_r:ir_spi_device:s0
+
+# Media
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service u:object_r:hal_dms_default_exec:s0
+/(vendor|system/vendor)/bin/hw/dolbycodec2 u:object_r:vendorcodec_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.media\.c2@1\.0-service u:object_r:mediacodec_exec:s0
+
+# NFC
+/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@2\.0-service u:object_r:hal_nfc_default_exec:s0
+
+# TouchFeature
+/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hw\.touchfeature@1\.0-service u:object_r:hal_touchfeature_xiaomi_default_exec:s0
+/dev/xiaomi-touch u:object_r:touchfeature_device:s0
+/sys/devices/virtual/touch/touch_dev(/.*)? u:object_r:sysfs_touch_dev:s0
+
+# Touchscreen
+/sys/devices/platform/goodix_ts.0(/.*)? u:object_r:sysfs_goodix_touch:s0
+
+# Thermal
+/(vendor|system/vendor)/bin/mi_thermald u:object_r:mi_thermald_exec:s0
+/data/vendor/thermal(/.*)? u:object_r:thermal_data_file:s0
+/sys/class/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
+/sys/class/thermal/thermal_message/torch_real_level u:object_r:sys_thermal_torch_real_level:s0
+/sys/class/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
+/sys/devices/virtual/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
+/sys/devices/virtual/thermal/thermal_message/torch_real_level u:object_r:sys_thermal_torch_real_level:s0
+/sys/devices/virtual/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0

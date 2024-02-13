@@ -1,0 +1,3 @@
+# DisplayFeature
+display.mistcservice                           u:object_r:vendor_mistcdisplay_service:s0
+miclstcservice                                 u:object_r:vendor_miclstc_service:s0

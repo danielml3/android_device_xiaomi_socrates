@@ -1,0 +1,2 @@
+hal_attribute_service(hal_audio, hal_audio_service)
+hal_client_domain(hal_audio_default, hal_dms)
