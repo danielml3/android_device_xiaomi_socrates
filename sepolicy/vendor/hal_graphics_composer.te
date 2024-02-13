@@ -1,0 +1,23 @@
+add_service(hal_graphics_composer_default, vendor_miclstc_service)
+add_service(hal_graphics_composer_default, vendor_mistcdisplay_service)
+allow hal_graphics_composer_client hal_graphics_composer_server:binder { call transfer };
+allow hal_graphics_composer_client hal_graphics_composer_server:binder transfer;
+allow hal_graphics_composer_client hal_graphics_composer_server:fd *;
+allow hal_graphics_composer_client hal_graphics_composer_server_tmpfs:file { getattr map read write };
+allow hal_graphics_composer_client servicemanager:binder { call transfer };
+allow hal_graphics_composer_client servicemanager:fd *;
+allow hal_graphics_composer_client vendor_hal_display_config_hwservice:hwservice_manager find;
+allow hal_graphics_composer_default rild:binder transfer;
+allow hal_graphics_composer_default vendor_displayfeature_device:chr_file { ioctl open read };
+allow hal_graphics_composer_default vendor_sysfs_displayfeature:dir { open read search };
+allow hal_graphics_composer_default vendor_sysfs_displayfeature:file { open read write };
+allow hal_graphics_composer_default vendor_sysfs_graphics:file rw_file_perms;
+allow hal_graphics_composer vendor_hal_displayfeature_xiaomi:binder transfer;
+get_prop(hal_graphics_composer, vendor_displayfeature_prop)
+hal_attribute_service(hal_graphics_composer, hal_graphics_composer_service)
+hal_attribute_service(hal_graphics_composer, vendor_hal_displayconfig_service)
+hal_attribute_service(hal_graphics_composer, vendor_hal_vnddisplayconfig_service)
+hal_client_domain(hal_graphics_composer_default, vendor_hal_displayfeature_xiaomi)
+set_prop(hal_graphics_composer_default, vendor_displayfeature_prop)
+set_prop(hal_graphics_composer_default, vendor_display_prop)
+unix_socket_connect(hal_graphics_composer_default, vendor_pps, init)

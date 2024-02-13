@@ -1,0 +1,9 @@
+allow hal_fingerprint_default hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
+allow hal_fingerprint_default vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager find;
+allow hal_fingerprint_default vendor_sysfs_displayfeature:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_displayfeature:file w_file_perms;
+binder_call(hal_fingerprint_default, hal_touchfeature_xiaomi_default)
+binder_call(hal_fingerprint_default, vendor_mfp-daemon)
+get_prop(hal_fingerprint_default, vendor_panel_info_prop)
+set_prop(hal_fingerprint_default, vendor_fp_info_prop)
+set_prop(hal_fingerprint_default, vendor_fp_prop)

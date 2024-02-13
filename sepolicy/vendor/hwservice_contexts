@@ -1,0 +1,18 @@
+# DisplayFeature
+vendor.xiaomi.hardware.displayfeature::IDisplayFeature       u:object_r:vendor_hal_displayfeature_xiaomi_hwservice:s0
+
+# FingerprintExtension
+com.fingerprints.extension::IFingerprintAuthenticator                                u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+com.fingerprints.extension::IFingerprintCalibration                                  u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+com.fingerprints.extension::IFingerprintEngineering                                  u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+com.fingerprints.extension::IFingerprintNavigation                                   u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+com.fingerprints.extension::IFingerprintOptical                                      u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+com.fingerprints.extension::IFingerprintSensorTest                                   u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+vendor.xiaomi.hardware.fingerprintextension::IXiaomiFingerprint                      u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+vendor.xiaomi.hardware.fx.tunnel::IMiFxTunnel                                        u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+
+# Media
+vendor.dolby.hardware.dms::IDms          u:object_r:hal_dms_hwservice:s0
+
+# TouchFeature
+vendor.xiaomi.hw.touchfeature::ITouchFeature           u:object_r:hal_touchfeature_xiaomi_hwservice:s0

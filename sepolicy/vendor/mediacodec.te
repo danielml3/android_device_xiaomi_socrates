@@ -1,0 +1,3 @@
+get_prop(mediacodec, vendor_displayfeature_prop)
+hal_client_domain(mediacodec, hal_audio)
+hal_client_domain(mediacodec, hal_dms)

@@ -1,0 +1,8 @@
+# Battery
+genfscon sysfs "/class/qcom-battery" u:object_r:vendor_sysfs_qcom_battery:s0
+
+# Camera
+genfscon sysfs "/csiphy_umd_paras/csiphy_umd_paras" u:object_r:sysfs_csiphy_umd_paras:s0
+
+# Perf
+genfscon proc "/perflock_records" u:object_r:vendor_proc_perflock_records:s0
