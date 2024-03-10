@@ -1794,6 +1794,7 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
+vendor/lib64/hw/audio.primary.kalama.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
@@ -2635,6 +2636,7 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.gnss-aidl-impl-qti.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
+vendor/lib/hw/audio.primary.kalama.so
 vendor/lib/hw/com.dsi.ant@1.0-impl.so
 vendor/lib/hw/vendor.qti.esepowermanager@1.1-impl.so
 vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
