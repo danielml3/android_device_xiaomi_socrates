@@ -283,6 +283,7 @@ qrtr-gunyah.ko
 kunit.ko
 hdcp_qseecom_dlkm.ko
 smcinvoke_dlkm.ko
+mi_disp_notifier.ko
 msm_drm.ko
 msm_ext_display.ko
 sync_fence.ko
@@ -290,3 +291,5 @@ msm_hw_fence.ko
 msm-mmrm.ko
 hdcp_qseecom_dlkm.ko
 smcinvoke_dlkm.ko
+xiaomi_touch.ko
+goodix_core.ko

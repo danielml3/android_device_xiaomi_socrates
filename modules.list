@@ -310,6 +310,7 @@ gh_arm_drv.ko
 msm_ext_display.ko
 sync_fence.ko
 msm_hw_fence.ko
+mi_disp_notifier.ko
 msm_drm.ko
 msm-mmrm.ko
 qcedev-mod_dlkm.ko
@@ -353,3 +354,5 @@ mbhc_dlkm.ko
 machine_dlkm.ko
 cameralog.ko
 camera.ko
+xiaomi_touch.ko
+goodix_core.ko

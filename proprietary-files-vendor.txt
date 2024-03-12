@@ -25,7 +25,6 @@ odm/bin/test-nusensors
 odm/bin/tidad@1.2
 odm/bin/toucheventcheck
 odm/bin/touch_raw
-odm/bin/touch_report
 odm/bin/vendor.xiaomi.hardware.otrpagent@2.0-service
 odm/bin/vib_cal
 odm/bin/vsimd
