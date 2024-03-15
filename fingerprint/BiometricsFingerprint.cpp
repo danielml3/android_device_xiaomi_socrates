@@ -24,6 +24,9 @@
 #include <unistd.h>
 
 #define CMD_FOD_LHBM_STATUS 4
+#define LOCAL_HBM_OFF_TO_NORMAL 0
+#define LOCAL_HBM_NORMAL_WHITE_1000NIT 1
+
 #define CMD_TOUCH_FOD_ENABLE 10
 
 namespace android {
@@ -87,6 +90,7 @@ Return<uint64_t> BiometricsFingerprint::preEnroll()  {
 
 Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69>& hat,
         uint32_t gid, uint32_t timeoutSec) {
+    setFODPressEnabled(true);
     return m2_1Service->enroll(hat, gid, timeoutSec);
 }
 
@@ -99,6 +103,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    setFODPressEnabled(false);
     return m2_1Service->cancel();
 }
 
@@ -117,6 +122,7 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
         uint32_t gid) {
+    setFODPressEnabled(true);
     return m2_1Service->authenticate(operationId, gid);
 }
 
@@ -125,12 +131,12 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t /*sensorId*/) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
-    setFodPressed(true);
+    mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, 1);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
-    setFodPressed(false);
+    mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, 0);
     return Void();
 }
 
@@ -138,6 +144,11 @@ Return<void> BiometricsFingerprint::onFingerUp() {
 
 Return<void> BiometricsFingerprint::onEnrollResult(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
     std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+
+    if (remaining == 0) { // Enroll finished
+        setFODPressEnabled(false);
+    }
+
     return mClientCallback->onEnrollResult(deviceId, fingerId, groupId, remaining);
 }
 
@@ -153,11 +164,22 @@ Return<void> BiometricsFingerprint::onAcquired(uint64_t deviceId, FingerprintAcq
 
 Return<void> BiometricsFingerprint::onAuthenticated(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, const hidl_vec<uint8_t>& token) {
     std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+
+    if (fingerId != 0) { // Valid finger authenticated
+        setFODPressEnabled(false);
+    }
+
     return mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
 }
 
 Return<void> BiometricsFingerprint::onError(uint64_t deviceId, FingerprintError error, int32_t vendorCode) {
     std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+
+    // Known error occurred
+    if (error != FingerprintError::ERROR_NO_ERROR && error != FingerprintError::ERROR_VENDOR) {
+        setFODPressEnabled(false);
+    }
+
     return mClientCallback->onError(deviceId, error, vendorCode);
 }
 Return<void> BiometricsFingerprint::onRemoved(uint64_t deviceId, uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
@@ -171,9 +193,13 @@ Return<void> BiometricsFingerprint::onEnumerate(uint64_t deviceId, uint32_t fing
 
 // End of IBiometricsFingerprintClientCallback
 
-void BiometricsFingerprint::setFodPressed(bool pressed) {
-    mExtension->extCmd(CMD_FOD_LHBM_STATUS, pressed);
-    mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, pressed);
+void BiometricsFingerprint::setFODPressEnabled(bool enabled) {
+    if (enabled) {
+        mExtension->extCmd(CMD_FOD_LHBM_STATUS, LOCAL_HBM_NORMAL_WHITE_1000NIT);
+    } else {
+        mExtension->extCmd(CMD_FOD_LHBM_STATUS, LOCAL_HBM_OFF_TO_NORMAL);
+        mTouchFeature->setTouchMode(0, CMD_TOUCH_FOD_ENABLE, 0);
+    }
 }
 
 IBiometricsFingerprint* BiometricsFingerprint::getInstance() {

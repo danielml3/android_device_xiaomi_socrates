@@ -12,4 +12,4 @@ on property:init.svc.vendor.fps_hal_socrates=running
     start mfp-daemon
 
 on boot
-    write /sys/devices/platform/goodix_ts.0/fod_enable 1
+    write /sys/devices/platform/goodix_ts.0/fod_gesture 1
