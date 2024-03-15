@@ -93,7 +93,8 @@ private:
     android::sp<IBiometricsFingerprintClientCallback> mClientCallback;
     std::mutex mClientCallbackMutex;
 
-    void setFodPressed(bool pressed);
+    void setFODPressListenEnabled(bool enabled);
+
 };
 
 }  // namespace implementation
