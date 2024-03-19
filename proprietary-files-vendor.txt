@@ -858,7 +858,7 @@ odm/lib64/hw/com.qti.chi.offline.so
 odm/lib64/hw/com.qti.chi.override.so
 odm/lib64/hw/consumerir.qcom.so
 odm/lib64/hw/displayfeature.default.so
-odm/lib64/hw/fingerprint.goodix_fod.so
+odm/lib64/hw/fingerprint.goodix_fod.so:odm/lib64/hw/fingerprint.goodix_fod.default.so
 odm/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
 odm/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
 odm/lib64/libAF.so
@@ -1174,7 +1174,6 @@ vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/dolbycodec2
 vendor/bin/hw/fbo-test
 vendor/bin/hw/hostapd
-vendor/bin/hw/mfp-daemon
 vendor/bin/hw/miperf_client
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/qcrilNrd
@@ -1559,7 +1558,6 @@ vendor/etc/init/imsdaemon.rc
 vendor/etc/init/init.charge_logger.rc
 vendor/etc/init/init.embmssl_server.rc
 vendor/etc/init/init.hwinfo.rc
-vendor/etc/init/init.mfp-daemon.rc
 vendor/etc/init/init.qccvendor.rc
 vendor/etc/init/init.qdmastats.rc
 vendor/etc/init/init.qti.display_boot.rc
@@ -1918,7 +1916,6 @@ vendor/etc/tzlog.dict
 vendor/etc/ueventd.rc
 vendor/etc/usb_audio_policy_configuration.xml
 vendor/etc/usecaseKvManager.xml
-vendor/etc/vintf/manifest/AHBF@2.1-service.xml
 vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml
 vendor/etc/vintf/manifest/android.hardware.radio.config.xml
@@ -3722,7 +3719,6 @@ vendor/lib64/vendor.xiaomi.hardware.cld@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.dtool@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.fbo@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.keyboardnanoapp@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.mimd@1.0.so
