@@ -915,6 +915,11 @@ VENDOR_SKIP_FILES=(
     "vendor/lib/libext2_uuid.so"
     "vendor/lib/libsparse.so"
 
+    # Fingerprint
+    "vendor/bin/hw/mfp-daemon"
+    "vendor/etc/init/init.mfp-daemon.rc"
+    "vendor/etc/vintf/manifest/AHBF@2.1-service.xml"
+
     # Framework detect
     "vendor/lib64/libqti_vndfwk_detect.so"
     "vendor/lib64/libqti_vndfwk_detect_vendor.so"
@@ -1295,6 +1300,7 @@ VENDOR_SKIP_FILES=(
 declare -A VENDOR_MODULE_DEST
 
 VENDOR_MODULE_DEST=(
+    ["odm/lib64/hw/fingerprint.goodix_fod.so"]="odm/lib64/hw/fingerprint.goodix_fod.default.so"
 )
 
 VENDOR_MODULE_FILES=(

@@ -124,6 +124,11 @@ PRODUCT_PACKAGES += \
     libext2_uuid.vendor \
     libsparse.vendor
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi \
+    libudfpshandler
+
 # Framework detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
