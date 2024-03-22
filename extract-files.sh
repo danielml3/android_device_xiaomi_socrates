@@ -55,6 +55,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/etc/audio/sku_kalama/audio_policy_configuration.xml)
+            sed -i s/AUDIO_FORMAT_LC3//g "${2}"
+            ;;
         *.xml)
             sed -i s/xml=version/xml\ version/g "${2}"
             ;;
