@@ -58,6 +58,9 @@ function blob_fixup() {
         odm/etc/camera/*.xml)
             sed -i s/xml=version/xml\ version/g "${2}"
             ;;
+        vendor/etc/audio/sku_kalama/audio_policy_configuration.xml)
+            sed -i s/AUDIO_FORMAT_LC3//g "${2}"
+            ;;
         vendor/bin/hw/android.hardware.security.keymint-service-qti)
             "${PATCHELF}" --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
             ;;
