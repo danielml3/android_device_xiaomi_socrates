@@ -380,6 +380,7 @@ $(call soong_config_set, vibrator, vibratortargets, vibratoraidlV2target)
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
+    android.hardware.wifi.hostapd-V1-ndk.vendor \
     wpa_cli \
     wpa_supplicant \
     wpa_supplicant.conf \
