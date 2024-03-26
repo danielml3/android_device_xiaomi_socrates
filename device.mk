@@ -70,8 +70,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor \
     audio.bluetooth.default \
-    libbluetooth_audio_session \
-    btconfig
+    libbluetooth_audio_session
 
 # Boot control
 PRODUCT_PACKAGES += \
