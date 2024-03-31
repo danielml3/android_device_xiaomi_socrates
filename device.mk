@@ -244,6 +244,9 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw
 
+PRODUCT_PACKAGES += \
+    dolbycodec_shim
+
 # Network
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor \

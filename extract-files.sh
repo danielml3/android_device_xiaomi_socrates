@@ -64,6 +64,9 @@ function blob_fixup() {
         odm/lib64/libmt@1.3.so)
             "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
+        vendor/lib/c2.dolby.client.so | vendor/lib64/c2.dolby.client.so)
+            grep -q "dolbycodec_shim.so" "${2}" || "${PATCHELF}" --add-needed "dolbycodec_shim.so" "${2}"
+            ;;
     esac
 }
 
