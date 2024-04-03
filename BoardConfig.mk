@@ -188,7 +188,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/frame
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := 2023-11-01
+VENDOR_SECURITY_PATCH := 2024-03-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
