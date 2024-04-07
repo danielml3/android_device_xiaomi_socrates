@@ -1228,6 +1228,9 @@ VENDOR_SKIP_FILES=(
     "vendor/lib64/libtlpd_logger.so"
     "vendor/lib64/libtlpd.so"
 
+    # Touch
+    "odm/bin/touch_report"
+
     # TrustedUI
     "vendor/lib64/vendor.qti.hardware.systemhelper@1.0.so"
     "vendor/lib/vendor.qti.hardware.systemhelper@1.0.so"
