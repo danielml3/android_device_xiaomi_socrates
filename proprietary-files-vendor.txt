@@ -28,7 +28,6 @@ odm/bin/setup_rcv2topmic.sh
 odm/bin/test-nusensors
 odm/bin/tidad@1.2
 odm/bin/touch_raw
-odm/bin/touch_report
 odm/bin/toucheventcheck
 odm/bin/vendor.xiaomi.hardware.otrpagent@2.0-service
 odm/bin/vib_cal

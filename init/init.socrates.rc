@@ -25,3 +25,7 @@ on post-fs-data
     mkdir /data/vendor/fingerprint 0770 system system
     mkdir /mnt/vendor/persist/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
+
+service touch_report /odm/bin/touch_report
+    disabled
+    override
