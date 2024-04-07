@@ -285,6 +285,9 @@ VENDOR_SKIP_FILES=(
     # Time
     "*/local_time.default.so"
 
+    # Touch
+    "*/bin/touch_report"
+
     # TrustedUI
     "*/vendor.qti.hardware.systemhelper@1.0.so"
 

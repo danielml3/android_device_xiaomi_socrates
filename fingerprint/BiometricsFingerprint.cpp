@@ -24,7 +24,7 @@
 #include <unistd.h>
 
 #define CMD_FOD_LHBM_STATUS 4
-#define CMD_TOUCH_FOD_ENABLE 1001
+#define CMD_TOUCH_FOD_ENABLE 10
 
 namespace android {
 namespace hardware {
