@@ -1127,6 +1127,9 @@ VENDOR_SKIP_FILES=(
     "*/overlay/WifiResTarget_spf.apk"
 
     # Power
+    "*/bin/hw/android.hardware.power-service"
+    "*/etc/init/android.hardware.power-service.rc"
+    "*/etc/vintf/manifest/power.xml"
     "*/lib64/android.hardware.power@1.0.so"
     "*/lib64/android.hardware.power@1.1.so"
     "*/lib64/android.hardware.power@1.2.so"

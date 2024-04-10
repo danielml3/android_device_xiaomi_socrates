@@ -253,9 +253,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti \
     android.hardware.power@1.2.vendor \
-    android.hardware.power-V3-ndk.vendor \
-    android.hardware.power-V4-ndk.vendor \
     vendor.qti.hardware.perf@2.3.vendor
 
 # ProtoBuf
