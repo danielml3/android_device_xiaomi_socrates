@@ -948,7 +948,6 @@ vendor/bin/hw/android.hardware.gnss-aidl-service-qti
 vendor/bin/hw/android.hardware.identity-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/bin/hw/android.hardware.nfc@1.2-service-st
-vendor/bin/hw/android.hardware.power-service
 vendor/bin/hw/android.hardware.security.keymint-service-qti
 vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/dolbycodec2
@@ -1279,7 +1278,6 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc
 vendor/etc/init/android.hardware.identity-service-qti.rc
 vendor/etc/init/android.hardware.nfc@1.2-service-st.rc
-vendor/etc/init/android.hardware.power-service.rc
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/init/cnd.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
@@ -1664,7 +1662,6 @@ vendor/etc/vintf/manifest/fod.xml
 vendor/etc/vintf/manifest/imsdcservice-saidl.xml
 vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml
 vendor/etc/vintf/manifest/manifest_identity_credential.xml
-vendor/etc/vintf/manifest/power.xml
 vendor/etc/vintf/manifest/qcrilhook-saidl.xml
 vendor/etc/vintf/manifest/qms-saidl.xml
 vendor/etc/vintf/manifest/qtiradio-saidl.xml
