@@ -1778,6 +1778,15 @@ for dir in odm vendor; do
     fi
 done
 
+# Generate the vendor skip files list map
+declare -A VENDOR_SKIP_FILES_MAP
+for file in ${VENDOR_SKIP_FILES[@]}; do
+    # Store the `file`, and the `file` with vendor and odm prefixes
+    # in order to support files declared as */filepath
+    VENDOR_SKIP_FILES_MAP[${file}]=" "
+    VENDOR_SKIP_FILES_MAP[odm/${file:2}]=" "
+    VENDOR_SKIP_FILES_MAP[vendor/${file:2}]=" "
+done
 
 rm -f $VENDOR_PROP_FILE
 FULL_FILES_LIST=$(cd $VENDOR_ODM_PATH && find odm vendor -type f | sort)
@@ -1786,7 +1795,7 @@ for file in $FULL_FILES_LIST; do
     MODULE=false
     destination=${VENDOR_MODULE_DEST[$file]}
 
-    check_array_regex "$file" "${VENDOR_SKIP_FILES[@]}" && SKIP=true
+    [[ -n "${VENDOR_SKIP_FILES_MAP[$file]}" ]] && SKIP=true
     check_array_regex "$file" "${VENDOR_MODULE_FILES[@]}" && MODULE=true
 
     if [[ $SKIP == true ]] && [[ "$destination" == "" ]]; then
