@@ -45,6 +45,9 @@
 /sys/devices/virtual/touch/touch_dev/hold_sensor u:object_r:sysfs_tp_virtual_prox:s0
 /sys/devices/virtual/touch/touch_dev/palm_sensor u:object_r:sysfs_tp_virtual_prox:s0
 
+# Touch
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.socrates u:object_r:hal_lineage_touch_default_exec:s0
+
 # Touchscreen
 /sys/devices/platform/goodix_ts.0(/.*)? u:object_r:sysfs_goodix_touch:s0
 

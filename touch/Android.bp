@@ -1,0 +1,23 @@
+/*
+ * Copyright (C) 2024 The LineageOS Project
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+cc_binary {
+    name: "vendor.lineage.touch@1.0-service.socrates",
+    init_rc: ["vendor.lineage.touch@1.0-service.socrates.rc"],
+    vintf_fragments: ["vendor.lineage.touch@1.0-service.socrates.xml"],
+    relative_install_path: "hw",
+    vendor: true,
+    srcs: [
+        "HighTouchPollingRate.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libhidlbase",
+        "libutils",
+        "vendor.lineage.touch@1.0",
+    ],
+}

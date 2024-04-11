@@ -1,0 +1,8 @@
+service hal.touch-socrates-1.0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.socrates
+    class hal
+    user system
+    group system
+
+on boot
+    chmod 664 /sys/devices/platform/goodix_ts.0/switch_report_rate
+    chown system system /sys/devices/platform/goodix_ts.0/switch_report_rate
