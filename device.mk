@@ -249,7 +249,8 @@ PRODUCT_PACKAGES += \
 # Overlay
 PRODUCT_PACKAGES += \
     FrameworkResOverlaySocrates \
-    SystemUIOverlaySocrates
+    SystemUIOverlaySocrates \
+    SettingsOverlaySocrates
 
 # Power
 PRODUCT_PACKAGES += \
