@@ -1,4 +1,5 @@
 type camera_persist_file, file_type, mlstrustedobject, vendor_persist_type;
+type ir_spi_device, dev_type;
 type proc_last_touch_events, fs_type, proc_type;
 type proc_tp_file, fs_type, proc_type;
 type proc_tp_lockdown, fs_type, proc_type;
