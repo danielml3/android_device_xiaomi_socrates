@@ -20,6 +20,9 @@ ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
 debug.hwui.skia_atrace_enabled=false
 
+# Media
+media.settings.xml=/odm/etc/media_profiles_kalama.xml
+
 # QEMU
 qemu.hw.mainkeys=0
 
