@@ -101,7 +101,9 @@ qcom-i2c-pmic.ko
 sg.ko
 spi-msm-geni.ko
 spmi-pmic-arb-debug.ko
+realtek.ko
 mcp25xxfd.ko
+tc956x_pcie_eth.ko
 msm_sharedmem.ko
 phy-generic.ko
 phy-qcom-emu.ko
@@ -199,6 +201,7 @@ stm_console.ko
 stm_ftrace.ko
 snd-usb-audio-qmi.ko
 snd-soc-hdmi-codec.ko
+snd-soc-tas5805m.ko
 cfg80211.ko
 mac80211.ko
 qrtr-smd.ko
