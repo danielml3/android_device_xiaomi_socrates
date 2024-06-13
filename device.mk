@@ -91,7 +91,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
     android.hardware.camera.common-V1-ndk.vendor \
     android.hardware.camera.device-V1-ndk.vendor \
-    android.hardware.camera.provider-V1-ndk.vendor
+    android.hardware.camera.provider-V1-ndk.vendor \
+    libexif.vendor \
+    libjpeg.vendor \
+    liblz4.vendor
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.aon@1.3.vendor \
@@ -132,7 +135,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # DumpState
 PRODUCT_PACKAGES += \
-    android.hardware.dumpstate-V1-ndk.vendor
+    android.hardware.dumpstate-V1-ndk.vendor \
+    libdumpstateutil.vendor
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -205,7 +209,8 @@ PRODUCT_PACKAGES += \
 
 # JSON
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libjsoncpp.vendor
 
 # Kernel (DTB)
 PRODUCT_COPY_FILES += \
@@ -218,6 +223,14 @@ PRODUCT_COPY_FILES += \
 # Libchrome
 PRODUCT_PACKAGES += \
     libchrome.vendor
+
+# Libcurl
+PRODUCT_PACKAGES += \
+    libcurl.vendor
+
+# Libsqlite
+PRODUCT_PACKAGES += \
+    libsqlite.vendor
 
 # Light
 PRODUCT_PACKAGES += \
@@ -379,7 +392,8 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service-qti \
     android.hardware.usb.gadget@1.2-service-qti \
     audio.usb.default \
-    usb_compositions.conf
+    usb_compositions.conf \
+    libusbhost.vendor
 
 # Vendor configurations
 $(call inherit-product, vendor/xiaomi/socrates/socrates-vendor.mk)
