@@ -335,8 +335,16 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    extphonelib \
+    extphonelib.xml \
+    ims-ext-common \
+    ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml
+    qti-telephony-hidl-wrapper-prd \
+    qti-telephony-utils \
+    qti_telephony_hidl_wrapper.xml \
+    qti_telephony_hidl_wrapper_prd.xml \
+    qti_telephony_utils.xml
 
 PRODUCT_PACKAGES += \
     ims-support
