@@ -269,7 +269,8 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlaySocrates \
     FrameworkResOverlaySocrates \
     SystemUIOverlaySocrates \
-    SettingsOverlaySocrates
+    SettingsOverlaySocrates \
+    TelephonyOverlaySocrates
 
 # Power
 PRODUCT_PACKAGES += \
