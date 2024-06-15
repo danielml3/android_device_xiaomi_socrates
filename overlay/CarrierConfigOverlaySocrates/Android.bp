@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "CarrierConfigOverlaySocrates",
+    sdk_version: "current",
+    vendor: true,
+}
