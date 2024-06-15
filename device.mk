@@ -266,6 +266,7 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlaySocrates \
     FrameworkResOverlaySocrates \
     SystemUIOverlaySocrates \
     SettingsOverlaySocrates
