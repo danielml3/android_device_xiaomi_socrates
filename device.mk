@@ -338,6 +338,12 @@ PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml
 
+PRODUCT_PACKAGES += \
+    ims-support
+
+PRODUCT_BOOT_JARS += \
+    ims-support
+
 # Tethering
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
