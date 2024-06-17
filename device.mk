@@ -121,16 +121,14 @@ PRODUCT_PACKAGES  += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4.vendor \
-    vendor.qti.hardware.display.allocator@3.0.vendor \
-    vendor.qti.hardware.display.allocator@4.0.vendor \
-    vendor.qti.hardware.display.composer@3.1.vendor \
-    vendor.qti.hardware.display.demura@2.0.vendor \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    vendor.qti.hardware.display.demura-service \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.config-V2-ndk.vendor \
     vendor.qti.hardware.display.mapper@2.0.vendor \
-    vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor \
-    vendor.qti.hardware.display.mapperextensions@1.3.vendor \
-    libdrm.vendor
+    libqdMetaData \
+    libqdutils \
 
 PRODUCT_PACKAGES += \
     vendor.display.config@1.11.vendor \
