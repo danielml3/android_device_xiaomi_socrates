@@ -572,7 +572,6 @@ odm/lib64/hw/camera.xiaomi.so
 odm/lib64/hw/com.qti.chi.offline.so
 odm/lib64/hw/com.qti.chi.override.so
 odm/lib64/hw/consumerir.qcom.so
-odm/lib64/hw/displayfeature.default.so
 odm/lib64/hw/fingerprint.goodix_fod.so:odm/lib64/hw/fingerprint.goodix_fod.default.so
 odm/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
 odm/lib64/libaachaptics.so
@@ -788,7 +787,6 @@ odm/lib/com.xiaomi.camhal.overlap.so
 odm/lib/com.xiaomi.camhal.submodel.camxfrag.so
 odm/lib/com.xiaomi.camhal.submodel.chifrag.so
 odm/lib/hw/consumerir.qcom.so
-odm/lib/hw/displayfeature.default.so
 odm/lib/hw/fingerprint.goodix_fod.so
 odm/lib/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
 odm/lib/libAF.so
@@ -912,7 +910,6 @@ vendor/bin/diag-router
 vendor/bin/diag_socket_log
 vendor/bin/diag_uart_log
 vendor/bin/disp_factory_tool
-vendor/bin/displayfeature
 vendor/bin/dpmQmiMgr
 vendor/bin/dspservice
 vendor/bin/edgnss-daemon
@@ -959,9 +956,6 @@ vendor/bin/hw/vendor.dolby.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
-vendor/bin/hw/vendor.qti.hardware.display.allocator-service
-vendor/bin/hw/vendor.qti.hardware.display.composer-service
-vendor/bin/hw/vendor.qti.hardware.display.demura-service
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
 vendor/bin/hw/vendor.qti.hardware.lights.service
@@ -982,7 +976,6 @@ vendor/bin/hw/vendor.qti.psiclient@1.0-service
 vendor/bin/hw/vendor.qti.secure_element@1.2-service
 vendor/bin/hw/vendor.qti.sla.service@1.0-service
 vendor/bin/hw/vendor.rongcard.hardware.eid@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
 vendor/bin/hw/vendor.xiaomi.modem.qms@1.0-service
 vendor/bin/imsdaemon
 vendor/bin/ims-dataservice-daemon
@@ -1001,7 +994,6 @@ vendor/bin/init.qcom.sdio.sh
 vendor/bin/init.qcom.sensors.sh
 vendor/bin/init.qcom.sh
 vendor/bin/init.qcom.usb.sh
-vendor/bin/init.qti.display_boot.sh
 vendor/bin/init.qti.kernel.debug-kalama.sh
 vendor/bin/init.qti.kernel.debug.sh
 vendor/bin/init.qti.kernel.early_debug-kalama.sh
@@ -1303,7 +1295,6 @@ vendor/etc/init/init.embmssl_server.rc
 vendor/etc/init/init.hwinfo.rc
 vendor/etc/init/init.qccvendor.rc
 vendor/etc/init/init.qdmastats.rc
-vendor/etc/init/init.qti.display_boot.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/init.qti.qcv.rc
@@ -1355,8 +1346,6 @@ vendor/etc/init/vendor.qti.diag_userdebug.rc
 vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc
-vendor/etc/init/vendor.qti.hardware.display.composer-service.rc
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
@@ -1384,7 +1373,6 @@ vendor/etc/init/vendor.qti.tftp.rc
 vendor/etc/init/vendor.rongcard.hardware.eid@1.0-service.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
-vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
 vendor/etc/init/vendor.xiaomi.modem.qms@1.0-service.rc
 vendor/etc/init/vmmgr.rc
 vendor/etc/init/vppservice.rc
@@ -1642,7 +1630,6 @@ vendor/etc/UrlSign.xml
 vendor/etc/usb_audio_policy_configuration.xml
 vendor/etc/usecaseKvManager.xml
 vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
-vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml
 vendor/etc/vintf/manifest/android.hardware.radio.config.xml
 vendor/etc/vintf/manifest/android.hardware.radio.data.xml
 vendor/etc/vintf/manifest/android.hardware.radio.messaging.xml
@@ -1668,8 +1655,6 @@ vendor/etc/vintf/manifest/qtiradio-saidl.xml
 vendor/etc/vintf/manifest/vendor.dolby.hardware.dms.xml
 vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.lights.service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.limits-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.perf.xml
@@ -1684,7 +1669,6 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.wifi.wificfr@1.0-service.xml
 vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager@1.0-service.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.displayfeature@1.0-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.modem.qms.xml
 vendor/etc/vmmgr.conf
 vendor/etc/wfdconfig.xml
@@ -1777,7 +1761,6 @@ vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/audio.primary.kalama.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
@@ -1799,7 +1782,6 @@ vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.wifidisplaysession@1.0-impl.so
 vendor/lib64/hw/vendor.qti.memory.pasrmanager@1.0-impl.so
 vendor/lib64/hw/vendor.rongcard.hardware.eid@1.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
 vendor/lib64/hw/vulkan.adreno.so
 vendor/lib64/libadaptlaunch.so
 vendor/lib64/libadm.so
@@ -1877,10 +1859,6 @@ vendor/lib64/libdiagjni.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdigital-dimming.so
 vendor/lib64/libdisp-aba.so
-vendor/lib64/libdisplayconfig.qti.so
-vendor/lib64/libdisplaydebug.so
-vendor/lib64/libdisplayfeatureservice.so
-vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
 vendor/lib64/libdlbdsservice.so
@@ -1890,7 +1868,6 @@ vendor/lib64/libdpmqmihal.so
 vendor/lib64/libdpps.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libdrmutils.so
 vendor/lib64/libdsd2pcm.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libDspIOProxy_stub.so
@@ -1934,10 +1911,6 @@ vendor/lib64/libgps.utils.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libgpt.so
 vendor/lib64/libgpudataproducer.so
-vendor/lib64/libgpu_tonemapper.so
-vendor/lib64/libgralloccore.so
-vendor/lib64/libgralloc.qti.so
-vendor/lib64/libgrallocutils.so
 vendor/lib64/libgsl.so
 vendor/lib64/libhalide_hexagon_host.so
 vendor/lib64/libhdcp1prov.so
@@ -2133,10 +2106,8 @@ vendor/lib64/libqdcm-algo.so
 vendor/lib64/libqdcm-json-mode-parser.so
 vendor/lib64/libqdcm-mode-parser.so
 vendor/lib64/libqdi.so
-vendor/lib64/libqdMetaData.so
 vendor/lib64/libqdpr.so
 vendor/lib64/libqdp.so
-vendor/lib64/libqdutils.so
 vendor/lib64/libqesdk2_0.so
 vendor/lib64/libqesdk_manager.so
 vendor/lib64/lib-qhcpservice.so
@@ -2172,7 +2143,6 @@ vendor/lib64/libqrtrclient.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libqseed3.so
-vendor/lib64/libqservice.so
 vendor/lib64/libqsh_ble_pb.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libQTEEConnector_vendor.so
@@ -2224,14 +2194,10 @@ vendor/lib64/libscveObjectSegmentation.so
 vendor/lib64/libscveObjectSegmentation_stub.so
 vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-colormgr-algo.so
 vendor/lib64/libsdm-color.so
-vendor/lib64/libsdmcore.so
-vendor/lib64/libsdmdal.so
 vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
-vendor/lib64/libsdmutils.so
 vendor/lib64/libsdsprpc.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libsensor_calibration.so
@@ -2444,12 +2410,6 @@ vendor/lib64/vendor.qti.hardware.data.ka-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib64/vendor.qti.hardware.display.config-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.display.config-V2-ndk.so
-vendor/lib64/vendor.qti.hardware.display.config-V3-ndk.so
-vendor/lib64/vendor.qti.hardware.display.config-V4-ndk.so
-vendor/lib64/vendor.qti.hardware.display.config-V5-ndk.so
-vendor/lib64/vendor.qti.hardware.display.config-V6-ndk.so
 vendor/lib64/vendor.qti.hardware.dpmservice@1.0.so
 vendor/lib64/vendor.qti.hardware.dpmservice@1.1.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
@@ -2616,7 +2576,6 @@ vendor/lib/hw/android.hardware.bluetooth@1.1-impl-qti.so
 vendor/lib/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.gnss-aidl-impl-qti.so
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/audio.primary.kalama.so
 vendor/lib/hw/com.dsi.ant@1.0-impl.so
@@ -2637,7 +2596,6 @@ vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 vendor/lib/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib/hw/vendor.qti.memory.pasrmanager@1.0-impl.so
 vendor/lib/hw/vendor.rongcard.hardware.eid@1.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
 vendor/lib/hw/vulkan.adreno.so
 vendor/lib/libadm.so
 vendor/lib/libadreno_app_profiles.so
@@ -2699,10 +2657,6 @@ vendor/lib/libdiagjni.so
 vendor/lib/libdiag.so
 vendor/lib/libdigital-dimming.so
 vendor/lib/libdisp-aba.so
-vendor/lib/libdisplayconfig.qti.so
-vendor/lib/libdisplaydebug.so
-vendor/lib/libdisplayfeatureservice.so
-vendor/lib/libdisplayfeature.so
 vendor/lib/libdisplayqos.so
 vendor/lib/libdisplayskuutils.so
 vendor/lib/libdlbpreg.so
@@ -2710,7 +2664,6 @@ vendor/lib/libdpmqmihal.so
 vendor/lib/libdpps.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
-vendor/lib/libdrmutils.so
 vendor/lib/libdsd2pcm.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libDspIOProxy_stub.so
@@ -2746,10 +2699,6 @@ vendor/lib/libgps.utils.so
 vendor/lib/libGPTEE_vendor.so
 vendor/lib/libgpt.so
 vendor/lib/libgpudataproducer.so
-vendor/lib/libgpu_tonemapper.so
-vendor/lib/libgralloccore.so
-vendor/lib/libgralloc.qti.so
-vendor/lib/libgrallocutils.so
 vendor/lib/libgsl.so
 vendor/lib/libhalide_hexagon_host.so
 vendor/lib/libhdcp1prov.so
@@ -2918,10 +2867,8 @@ vendor/lib/libqdcm-algo.so
 vendor/lib/libqdcm-json-mode-parser.so
 vendor/lib/libqdcm-mode-parser.so
 vendor/lib/libqdi.so
-vendor/lib/libqdMetaData.so
 vendor/lib/libqdpr.so
 vendor/lib/libqdp.so
-vendor/lib/libqdutils.so
 vendor/lib/libqesdk2_0.so
 vendor/lib/libqesdk_manager.so
 vendor/lib/lib-qhcpservice.so
@@ -2954,7 +2901,6 @@ vendor/lib/libqrtrclient.so
 vendor/lib/libqrtr.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libqseed3.so
-vendor/lib/libqservice.so
 vendor/lib/libqsh_ble_pb.so
 vendor/lib/libqsocket.so
 vendor/lib/libQTEEConnector_vendor.so
@@ -3005,14 +2951,10 @@ vendor/lib/libscveObjectSegmentation.so
 vendor/lib/libscveObjectSegmentation_stub.so
 vendor/lib/libscveObjectTracker.so
 vendor/lib/libscveObjectTracker_stub.so
-vendor/lib/libsdedrm.so
 vendor/lib/libsdm-colormgr-algo.so
 vendor/lib/libsdm-color.so
-vendor/lib/libsdmcore.so
-vendor/lib/libsdmdal.so
 vendor/lib/libsdm-disp-vndapis.so
 vendor/lib/libsdmextension.so
-vendor/lib/libsdmutils.so
 vendor/lib/libsdsprpc.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libsensor_calibration.so
@@ -3219,12 +3161,6 @@ vendor/lib/vendor.qti.hardware.data.ka-V1-ndk.so
 vendor/lib/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib/vendor.qti.hardware.data.lce@1.0.so
 vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib/vendor.qti.hardware.display.config-V1-ndk.so
-vendor/lib/vendor.qti.hardware.display.config-V2-ndk.so
-vendor/lib/vendor.qti.hardware.display.config-V3-ndk.so
-vendor/lib/vendor.qti.hardware.display.config-V4-ndk.so
-vendor/lib/vendor.qti.hardware.display.config-V5-ndk.so
-vendor/lib/vendor.qti.hardware.display.config-V6-ndk.so
 vendor/lib/vendor.qti.hardware.dpmservice@1.0.so
 vendor/lib/vendor.qti.hardware.dpmservice@1.1.so
 vendor/lib/vendor.qti.hardware.dsp@1.0.so

@@ -67,7 +67,7 @@ ro.vendor.mi_sf.gallery_p3_dolby_opt=true
 ro.vendor.display.video_or_camera_fps.support=true
 ro.vendor.display.set_fps_stat_timer_ms=1000
 debug.sf.set_idle_timer_ms=1100
-persist.sys.miui_resolution=1080,2400,420
+persist.sys.miui_resolution=1440x3200
 vendor.display.force_tonemapping=1
 
 # Fingerprint
