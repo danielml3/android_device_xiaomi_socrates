@@ -7,11 +7,8 @@
 #define LOG_TAG "UdfpsHandler.xiaomi_socrates"
 
 #include <android-base/logging.h>
-#include <android-base/unique_fd.h>
 
-#include <poll.h>
 #include <fstream>
-#include <thread>
 
 #include "UdfpsHandler.h"
 
@@ -42,56 +39,12 @@ static void set(const std::string& path, const T& value) {
     file << value;
 }
 
-static bool readBool(int fd) {
-    char c;
-    int rc;
-
-    rc = lseek(fd, 0, SEEK_SET);
-    if (rc) {
-        LOG(ERROR) << "failed to seek fd, err: " << rc;
-        return false;
-    }
-
-    rc = read(fd, &c, sizeof(char));
-    if (rc != 1) {
-        LOG(ERROR) << "failed to read bool from fd, err: " << rc;
-        return false;
-    }
-
-    return c != '0';
-}
-
 }  // anonymous namespace
 
 class XiaomiSocratesUdfpsHander : public UdfpsHandler {
   public:
     void init(fingerprint_device_t* device) {
         mDevice = device;
-
-        std::thread([this]() {
-            int fd = open(FOD_PRESS_STATUS_PATH, O_RDONLY);
-            if (fd < 0) {
-                LOG(ERROR) << "failed to open fd, err: " << fd;
-                return;
-            }
-
-            struct pollfd fodPressStatusPoll = {
-                    .fd = fd,
-                    .events = POLLERR | POLLPRI,
-                    .revents = 0,
-            };
-
-            while (true) {
-                int rc = poll(&fodPressStatusPoll, 1, -1);
-                if (rc < 0) {
-                    LOG(ERROR) << "failed to poll fd, err: " << rc;
-                    continue;
-                }
-
-                mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS,
-                                readBool(fd) ? PARAM_FOD_PRESSED : PARAM_FOD_RELEASED);
-            }
-        }).detach();
     }
 
     void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
@@ -137,6 +90,10 @@ class XiaomiSocratesUdfpsHander : public UdfpsHandler {
         set(DISP_PARAM_PATH,
             std::string(DISP_PARAM_LOCAL_HBM_MODE) + " " +
                     (pressed ? DISP_PARAM_LOCAL_HBM_ON : DISP_PARAM_LOCAL_HBM_OFF));
+
+        if (pressed) {
+            mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS, PARAM_FOD_PRESSED);
+        }
     }
 };
 
