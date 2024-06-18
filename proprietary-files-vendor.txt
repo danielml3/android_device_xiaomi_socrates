@@ -1861,7 +1861,6 @@ vendor/lib64/libdisp-aba.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
 vendor/lib64/libdlbdsservice.so
-vendor/lib64/libdlbpreg.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libdpmqmihal.so
 vendor/lib64/libdpps.so
@@ -2247,7 +2246,6 @@ vendor/lib64/libstfactory-vendor.so
 vendor/lib64/libstnfc-auth.so
 vendor/lib64/libstreamparser.so
 vendor/lib64/libsubsystem_control.so
-vendor/lib64/libswspatializer_ext.so
 vendor/lib64/libsxrservice_client.qti.so
 vendor/lib64/libsxrservice.so
 vendor/lib64/libsynergy_loc_api.so
@@ -2339,14 +2337,11 @@ vendor/lib64/qtiwakelock.so
 vendor/lib64/se_nq_extn_client.so
 vendor/lib64/sensors.ssc.so
 vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libdlbvol.so
-vendor/lib64/soundfx/libhwdap.so
 vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libquasar.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libspatializer.so
 vendor/lib64/soundfx/libswgamedap.so
-vendor/lib64/soundfx/libswspatializer.so
 vendor/lib64/soundfx/libswvqe.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
@@ -2658,7 +2653,6 @@ vendor/lib/libdigital-dimming.so
 vendor/lib/libdisp-aba.so
 vendor/lib/libdisplayqos.so
 vendor/lib/libdisplayskuutils.so
-vendor/lib/libdlbpreg.so
 vendor/lib/libdpmqmihal.so
 vendor/lib/libdpps.so
 vendor/lib/libdrmfs.so
@@ -2998,7 +2992,6 @@ vendor/lib/libstandbyfeature.so
 vendor/lib/libStereoRectifyWrapper.so
 vendor/lib/libstreamparser.so
 vendor/lib/libsubsystem_control.so
-vendor/lib/libswspatializer_ext.so
 vendor/lib/libsxrservice_client.qti.so
 vendor/lib/libsxrservice.so
 vendor/lib/libsynergy_loc_api.so
@@ -3092,14 +3085,11 @@ vendor/lib/rfsa/adsp/nearby.napp_header
 vendor/lib/rfsa/adsp/nearby.so
 vendor/lib/sensors.ssc.so
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libdlbvol.so
-vendor/lib/soundfx/libhwdap.so
 vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/soundfx/libquasar.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib/soundfx/libspatializer.so
 vendor/lib/soundfx/libswgamedap.so
-vendor/lib/soundfx/libswspatializer.so
 vendor/lib/soundfx/libswvqe.so
 vendor/lib/vendor.display.color@1.0.so
 vendor/lib/vendor.display.color@1.1.so

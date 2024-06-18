@@ -234,6 +234,18 @@ VENDOR_SKIP_FILES=(
     "vendor/lib/vendor.qti.hardware.AGMIPC@1.0.so"
     "vendor/lib/vendor.qti.hardware.pal@1.0.so"
 
+    # Audio (dolby)
+    "vendor/lib64/libdlbpreg.so"
+    "vendor/lib64/libswspatializer_ext.so"
+    "vendor/lib64/soundfx/libdlbvol.so"
+    "vendor/lib64/soundfx/libhwdap.so"
+    "vendor/lib64/soundfx/libswspatializer.so"
+    "vendor/lib/libdlbpreg.so"
+    "vendor/lib/libswspatializer_ext.so"
+    "vendor/lib/soundfx/libdlbvol.so"
+    "vendor/lib/soundfx/libhwdap.so"
+    "vendor/lib/soundfx/libswspatializer.so"
+
     # Automotive
     "vendor/lib64/android.automotive.watchdog-V2-ndk.so"
     "vendor/lib64/android.hardware.automotive.vehicle@2.0-manager-lib.so"
