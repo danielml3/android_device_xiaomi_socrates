@@ -1262,6 +1262,9 @@ VENDOR_SKIP_FILES=(
     "vendor/lib64/hw/android.hardware.renderscript@1.0-impl.so"
     "vendor/lib/hw/android.hardware.renderscript@1.0-impl.so"
 
+    # Seccomp policy
+    "vendor/etc/seccomp_policy/qwesd@2.0.policy"
+
     # SecureElement
     "vendor/lib64/android.hardware.secure_element@1.0.so"
     "vendor/lib64/android.hardware.secure_element@1.1.so"

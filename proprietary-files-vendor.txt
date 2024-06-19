@@ -1582,7 +1582,6 @@ vendor/etc/seccomp_policy/qsap_voiceui.policy
 vendor/etc/seccomp_policy/qspm.policy
 vendor/etc/seccomp_policy/qti-systemd.policy
 vendor/etc/seccomp_policy/qvr@2.0.policy
-vendor/etc/seccomp_policy/qwesd@2.0.policy
 vendor/etc/seccomp_policy/sxr@2.0.policy
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/etc/seccomp_policy/wfdhdcphalservice.policy
