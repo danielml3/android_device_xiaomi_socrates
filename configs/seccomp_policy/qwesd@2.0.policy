@@ -71,4 +71,5 @@ renameat: 1
 shutdown: 1
 ioctl: 1
 rt_sigsuspend: 1
+pipe2: 1
 
